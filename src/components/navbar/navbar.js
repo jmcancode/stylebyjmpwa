@@ -37,7 +37,7 @@ const TopNavBar = () => {
             Mens
           </Nav.Link>
           <Nav.Link as={Link} to="/bags" href="#womens">
-            Womens
+            Women
           </Nav.Link>
           <NavDropdown title="Accessories" id="collasible-nav-dropdown">
             <NavDropdown.Item
@@ -57,21 +57,23 @@ const TopNavBar = () => {
               Cream & Polish
             </NavDropdown.Item>
           </NavDropdown>
+          <Nav.Link as={Link} to="/collabs" href="#collaborations">
+            Shoe Care
+          </Nav.Link>
           <Nav.Link as={Link} to="/byrequest" href="#byrequest">
             By Request
           </Nav.Link>
           <Nav.Link as={Link} to="/aboutus" eventKey={2} href="#aboutus">
             Heritage
           </Nav.Link>
+          <Nav.Link as={Link} to="/collabs" href="#collaborations">
+            Collaborations
+          </Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link>Cart</Nav.Link>
           {!currentUser && (
-            <Nav.Link
-              as={Link}
-              to="/login"
-              className="text-muted  mr-3"
-            >
+            <Nav.Link as={Link} to="/login" className="text-muted  mr-3">
               Login
             </Nav.Link>
           )}

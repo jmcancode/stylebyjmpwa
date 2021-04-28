@@ -1,10 +1,15 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
 const AccPage = () => {
   return (
-    <div>
-      <p>Text</p>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <p>This is the Accessories page</p>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

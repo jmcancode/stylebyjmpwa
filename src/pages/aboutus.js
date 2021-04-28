@@ -5,7 +5,7 @@ const AboutUsPage = () => {
     <Container>
       <Row>
         <Col>
-          <h3 className="text-uppercase text-center">About us</h3>
+          <h3 className="text-uppercase text-center">our Story</h3>
         </Col>
       </Row>
       <Row>

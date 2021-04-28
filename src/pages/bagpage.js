@@ -1,10 +1,15 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
 const BagsPage = () => {
   return (
-    <div>
-      <p>This is the womens page</p>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <p>This is the womens page</p>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
