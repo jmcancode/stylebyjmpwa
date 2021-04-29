@@ -7,33 +7,34 @@ import {
   Alert,
   Container,
   Image,
+  Row,
 } from "react-bootstrap";
 
-import { useAuth } from "../../firebase/context";
+// import { useAuth } from "../../firebase/context";
 
 import logo from "../../assets/jmlogo.png";
 import Cart from "../../assets/shopping-bag.svg";
-import LoginIcon from "../../assets/log-in.svg";
-import LogoutIcon from "../../assets/log-out.svg";
+// import LoginIcon from "../../assets/log-in.svg";
+// import LogoutIcon from "../../assets/log-out.svg";
 import "../../App.css";
 import { useHistory, Link } from "react-router-dom";
 
 const TopNavBar = () => {
-  const history = useHistory();
-  const { logout, currentUser } = useAuth();
+  // const history = useHistory();
+  // const { logout, currentUser } = useAuth();
   const [error, setError] = useState("");
 
-  async function handleLogout(e) {
-    e.preventDefault();
-    setError("");
+  // async function handleLogout(e) {
+  //   e.preventDefault();
+  //   setError("");
 
-    try {
-      await logout();
-      history.push("/login");
-    } catch {
-      setError("Failed to log out");
-    }
-  }
+  //   try {
+  //     await logout();
+  //     history.push("/login");
+  //   } catch {
+  //     setError("Failed to log out");
+  //   }
+  // }
 
   return (
     <Container>
@@ -84,8 +85,12 @@ const TopNavBar = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link>
-              <Image src={Cart} alt="shopping-cart" />
+            <Nav.Link
+              as={Link}
+              to="/checkout"
+              className="d-none d-sm-block d-sm-none d-md-block"
+            >
+              <Image src={Cart} alt="shopping-cart" /> My Bag
             </Nav.Link>
             {/* {!currentUser && (
               <Nav.Link as={Link} to="/login" className="text-muted  mr-3">

@@ -15,6 +15,11 @@ import LoginPage from "./components/auth/login";
 import RegisterPage from "./components/auth/register";
 import CollabPage from "./pages/collaborations";
 import ShoeCare from "./pages/shoecare";
+import FooterComponent from "./components/footer/FooterComponent";
+import UserAccount from "./pages/userAccount";
+import PrivateRoute from "./components/privateRoute/PrivateRoute";
+import CheckoutPage from "./pages/checkout";
+
 
 function App() {
   return (
@@ -33,8 +38,11 @@ function App() {
             <Route path="/aboutus" component={AboutUsPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
+            <Route path="/checkout" component={CheckoutPage} />
+            <PrivateRoute path="/myaccount" component={UserAccount} />
             <Route component={FourOhFour} />
           </Switch>
+          <FooterComponent />
         </div>
       </Router>
     </AuthProvider>
