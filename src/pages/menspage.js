@@ -11,7 +11,7 @@ const MensPage = () => {
   return (
     <Container className="justify-content-center align-center">
       <Col lg={true}>
-        <Row xs={1} md={1} lg={1} className="w-100">
+        <Row noGutters={true} xs={1} md={1} lg={1} className="w-100">
           <Card border="light">
             <Card.Img
               src={FeatureImage}
@@ -28,8 +28,7 @@ const MensPage = () => {
         </Row>
         <Row xs={1} md={2} lg={2}>
           <Col>
-            {" "}
-            <Card border="light">
+            <Card border="light" className="w-100 h-100">
               <Card.Img
                 src={BagImage}
                 width={100}
@@ -44,7 +43,6 @@ const MensPage = () => {
             </Card>
           </Col>
           <Col>
-            {" "}
             <Card border="light">
               <Card.Img
                 src={MensImage}

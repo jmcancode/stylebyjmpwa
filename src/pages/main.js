@@ -34,7 +34,7 @@ const MainPage = () => {
           <Row xs={1} md={2} lg={2} className="p-1">
             <Col>
               {" "}
-              <Card border="light">
+              <Card border="light" className="w-100 h-100">
                 <Card.Img
                   src={BagImage}
                   width={100}
@@ -99,7 +99,7 @@ const MainPage = () => {
                   alt="Card image"
                 />
                 <Card.ImgOverlay>
-                  <Card.Title cclassName="d-flex text-uppercase mt-5 text-center align-center bg-light">
+                  <Card.Title className="d-flex text-uppercase mt-5 text-center align-center bg-light">
                     Accessories
                   </Card.Title>
                 </Card.ImgOverlay>
