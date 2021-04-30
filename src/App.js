@@ -20,7 +20,6 @@ import UserAccount from "./pages/userAccount";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import CheckoutPage from "./pages/checkout";
 
-
 function App() {
   return (
     <AuthProvider>

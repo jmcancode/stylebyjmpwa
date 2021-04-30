@@ -16,11 +16,12 @@ const StripeCheckoutButton = ({ price }) => {
       billingAddress
       image={JMLogo}
       shippingAddress
-      description={"Your total is $${price}"}
+      description="Your total is $${price}"
       amount={priceForStripe}
       panelLabel="Pay Now"
       token={onToken}
       stripeKey={publishableKey}
+      currency="USD"
     />
   );
 };
