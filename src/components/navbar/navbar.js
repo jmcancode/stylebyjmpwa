@@ -53,14 +53,14 @@ const TopNavBar = () => {
                 Cream & Polish
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link as={Link} to="/collabs" href="#collaborations">
+              Collaborations
+            </Nav.Link>
             <Nav.Link as={Link} to="/byrequest" href="#byrequest">
               By Request
             </Nav.Link>
             <Nav.Link as={Link} to="/aboutus" eventKey={2} href="#aboutus">
               Heritage
-            </Nav.Link>
-            <Nav.Link as={Link} to="/collabs" href="#collaborations">
-              Collaborations
             </Nav.Link>
           </Nav>
           <Nav>

@@ -19,6 +19,10 @@ import FooterComponent from "./components/footer/FooterComponent";
 import UserAccount from "./pages/userAccount";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import CheckoutPage from "./pages/checkout";
+import StockistLocation from "./pages/stockist";
+import CollabDetail from "./pages/collabDetail";
+
+
 
 function App() {
   return (
@@ -33,11 +37,13 @@ function App() {
             <Route path="/accessories" component={AccPage} />
             <Route path="/shoecare" component={ShoeCare} />
             <Route path="/collabs" component={CollabPage} />
+            <Route path="/collabdetail" component={CollabDetail} />
             <Route path="/byrequest" component={ByRequestPage} />
             <Route path="/aboutus" component={AboutUsPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
             <Route path="/checkout" component={CheckoutPage} />
+            <Route path="/stockist" component={StockistLocation} />
             <PrivateRoute path="/myaccount" component={UserAccount} />
             <Route component={FourOhFour} />
           </Switch>
