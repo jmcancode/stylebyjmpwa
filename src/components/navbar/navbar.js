@@ -1,30 +1,24 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  NavbarBrand,
-  Container,
-} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, NavbarBrand } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/jmlogo.png";
-
-import { FaShoppingBag } from "react-icons/fa";
 
 import "../../App.css";
 
 const TopNavBar = () => {
   return (
-    <Container>
+    <>
       <Navbar collapseOnSelect expand="lg" bg="transparent" variant="light">
         <NavbarBrand as={Link} to="/">
           <img width={100} height={100} alt="style by jm logo" src={logo} />
         </NavbarBrand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
+          <Nav
+            className="mx-auto"
+            style={{ fontWeight: "bold", fontSize: "18px" }}
+          >
             <Nav.Link as={Link} to="/mens" href="#mens">
               Men
             </Nav.Link>
@@ -61,25 +55,9 @@ const TopNavBar = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav>
-            <Nav.Link
-              as={Link}
-              to="/checkout"
-              className="d-none d-sm-block d-sm-none d-md-block"
-            >
-              <FaShoppingBag />
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/checkout"
-              className="d-none d-sm-block d-md-none d-block d-sm-none"
-            >
-              Cart
-            </Nav.Link>
-          </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </Container>
+    </>
   );
 };
 

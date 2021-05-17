@@ -31,6 +31,7 @@ function App() {
       <Router>
         <div className="App">
           <TopTopNav />
+
           <TopNavBar />
           <Switch>
             <Route exact path="/" component={MainPage} />

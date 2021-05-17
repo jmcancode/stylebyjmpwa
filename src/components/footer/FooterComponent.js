@@ -139,21 +139,25 @@ const FooterComponent = () => {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="text-center">
         <Row xs={1} md={1} lg={1} className="pt-5 m-4">
-          <Col style={{ color: "#d6d6d7" }}>
+          <Col sm style={{ color: "#d0d6d7" }}>
             <p className="text-center">
-              Website by
+              © Style by JM Footwear 2021. All rights reserved.
+            </p>
+          </Col>
+          <Col sm className="mb-3" style={{ color: "#d6d6d7" }}>
+            <small className="text-center">
+              Design & Dev by
               <a
-                className="pl-2"
                 href="https://jonmichaelnarvaez.com"
                 rel="noopener noreferrer"
                 target="__blank"
-                style={{ textDecoration: "none", color: "#d6d6d7" }}
+                style={{ color: "#d6d6d7" }}
               >
                 B-Boy Creative
               </a>
-            </p>
+            </small>
           </Col>
         </Row>
       </Container>
