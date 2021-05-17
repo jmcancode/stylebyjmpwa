@@ -21,8 +21,8 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import CheckoutPage from "./pages/checkout";
 import StockistLocation from "./pages/stockist";
 import CollabDetail from "./pages/collabDetail";
-
-
+import ShopAllMen from "./pages/shopallmen";
+import PolicyPage from "./pages/policy/policy";
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route path="/mens" component={MensPage} />
+            <Route path="/shopallmens" component={ShopAllMen} />
             <Route path="/bags" component={BagPage} />
             <Route path="/accessories" component={AccPage} />
             <Route path="/shoecare" component={ShoeCare} />
@@ -44,6 +45,7 @@ function App() {
             <Route path="/register" component={RegisterPage} />
             <Route path="/checkout" component={CheckoutPage} />
             <Route path="/stockist" component={StockistLocation} />
+            <Route path="/policy" component={PolicyPage} />
             <PrivateRoute path="/myaccount" component={UserAccount} />
             <Route component={FourOhFour} />
           </Switch>

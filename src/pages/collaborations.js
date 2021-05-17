@@ -1,19 +1,24 @@
 import React from "react";
-import { Col, Container, Row, Card } from "react-bootstrap";
+import { Col, Button, Row, Card } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 import MensImage from "../assets/essential-captoe.png";
 import BagImage from "../assets/RyanHunter/IMG_2685.JPG";
 import FeatureImage from "../assets/RyanHunter/layercakexjm-19.JPG";
 
 const CollabPage = () => {
   return (
-    <Container className="justify-content-center align-center">
-      <Col sm={true}>
-        <Row noGutters={true} xs={1} md={1} lg={1} className="w-100">
-          <Card
-            as={Link}
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      fluid
+      className="justify-content-center align-center container"
+    >
+      <Row noGutters={true} xs={1} md={1} lg={1} className="w-100">
+        <Col>
+          <motion.div
+            className="card"
             to="/collabdetail"
             border="light"
             style={{ color: "#1f1f1f" }}
@@ -24,31 +29,49 @@ const CollabPage = () => {
               width={100}
               alt="Card image"
             />
-            <Card.ImgOverlay bg="dark">
-              <Card.Text className="text-left text-uppercase">
+            <Card.ImgOverlay
+              className="d-flex justify-content-start align-items-end"
+              bg="dark"
+            >
+              <Card.Text className=" d-column-flex justify-content-end align-center text-uppercase">
                 <h5>LayerCake Los Angeles</h5>
+                <Button as={Link} to="/collabdetail" size="sm" variant="light">
+                  Shop
+                </Button>
               </Card.Text>
             </Card.ImgOverlay>
-          </Card>
-        </Row>
-        <Row xs={1} md={2} lg={2}>
-          <Col>
-            <Card border="light" className="w-100 h-100">
+          </motion.div>
+        </Col>
+        <Row noGutters={true} className="pt-2" xs={12} md={2} lg={2}>
+          <Col sm>
+            <motion.div
+              className="w-100 h-100 p-1 card border-light"
+              style={{ width: "100%" }}
+            >
               <Card.Img
                 src={BagImage}
                 width="100%"
                 height="100%"
                 alt="Card image"
+                style={{ objectFit: "cover" }}
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="text-left text-uppercase">
-                  Ryan Hunter
+                  <h5>Ryan Hunter</h5>
+                  <Button
+                    as={Link}
+                    to="/collabdetail"
+                    size="sm"
+                    variant="light"
+                  >
+                    Shop
+                  </Button>
                 </Card.Title>
               </Card.ImgOverlay>
-            </Card>
+            </motion.div>
           </Col>
-          <Col>
-            <Card border="light">
+          <Col sm>
+            <motion.div className="card p-1 border-light">
               <Card.Img
                 src={MensImage}
                 width="100%"
@@ -56,16 +79,24 @@ const CollabPage = () => {
                 alt="Card image"
                 className="p-2 pt-5"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="text-left text-uppercase">
-                  Exchange LA
+                  <h5>Exchange LA</h5>
+                  <Button
+                    as={Link}
+                    to="/collabdetail"
+                    size="sm"
+                    variant="light"
+                  >
+                    Shop
+                  </Button>
                 </Card.Title>
               </Card.ImgOverlay>
-            </Card>
+            </motion.div>
           </Col>
         </Row>
-      </Col>
-    </Container>
+      </Row>
+    </motion.div>
   );
 };
 

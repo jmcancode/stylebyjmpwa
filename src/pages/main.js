@@ -8,11 +8,16 @@ import DGandyImage from "../assets/dgandy.jpg";
 import BagImage from "../assets/bag.jpg";
 import FeatureImage from "../assets/madeinspain.png";
 import EssentialImage from "../assets/feature.jpg";
-
+import { motion } from "framer-motion";
 const MainPage = () => {
   return (
     <>
-      <Container>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="container fluid"
+        fluid
+      >
         <Col lg={true}>
           <Row noGutters={true} xs={1} md={1} lg={1} className="w-100 p-1">
             <Col>
@@ -22,11 +27,16 @@ const MainPage = () => {
                   width={100}
                   height="100%"
                   alt="Card image"
+                  style={{
+                    height: "395px",
+                    objectFit: "cover",
+                    objectPosition: "0% 50%",
+                  }}
                 />
-                <Card.ImgOverlay>
-                  <Card.Title className="d-flex text-uppercase mt-5 text-center align-center bg-light">
+                <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
+                  <Card.Body className="text-uppercase mt-5 text-white ">
                     a product of almansa, spain
-                  </Card.Title>
+                  </Card.Body>
                 </Card.ImgOverlay>
               </Card>
             </Col>
@@ -41,10 +51,8 @@ const MainPage = () => {
                   height="100%"
                   alt="Card image"
                 />
-                <Card.ImgOverlay>
-                  <Card.Title className="d-flex text-uppercase mt-5 text-center bg-light">
-                    Bags
-                  </Card.Title>
+                <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
+                  <Card.Body className="text-uppercase mt-5 ">Bags</Card.Body>
                 </Card.ImgOverlay>
               </Card>
             </Col>
@@ -57,30 +65,32 @@ const MainPage = () => {
                   height="100%"
                   alt="Card image"
                 />
-                <Card.ImgOverlay>
-                  <Card.Title className="d-flex text-uppercase mt-5 text-center align-center bg-light">
+                <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
+                  <Card.Body className="text-uppercase mt-5">
                     Goodyear Welt Flexi Sole
-                  </Card.Title>
+                  </Card.Body>
                 </Card.ImgOverlay>
               </Card>
             </Col>
           </Row>
           <Row xs={1} md={1} lg={1} className="p-1">
             <Col>
-              <Card
-                border="light"
-                className="bg-transparent text-black text-center"
-              >
+              <Card border="light">
                 <Card.Img
                   src={DGandyImage}
                   width={100}
                   height="100%"
                   alt="Card image"
+                  style={{
+                    height: "395px",
+                    objectFit: "cover",
+                    objectPosition: "0% 75%",
+                  }}
                 />
-                <Card.ImgOverlay>
-                  <Card.Title className="d-flex text-uppercase mt-5 text-center align-center bg-light">
+                <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
+                  <Card.Body className="text-uppercase mt-5 text-white">
                     Mens
-                  </Card.Title>
+                  </Card.Body>
                 </Card.ImgOverlay>
               </Card>
             </Col>
@@ -88,36 +98,33 @@ const MainPage = () => {
           <Row xs={1} md={2} lg={2} className="p-1">
             <Col>
               {" "}
-              <Card
-                border="light"
-                className="bg-transparent text-black text-center"
-              >
+              <Card border="light">
                 <Card.Img
                   src={AccessoriesImage}
                   width={100}
                   height="100%"
                   alt="Card image"
                 />
-                <Card.ImgOverlay>
-                  <Card.Title className="d-flex text-uppercase mt-5 text-center align-center bg-light">
+                <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
+                  <Card.Body className=" text-uppercase mt-5">
                     Accessories
-                  </Card.Title>
+                  </Card.Body>
                 </Card.ImgOverlay>
               </Card>
             </Col>
             <Col>
               {" "}
-              <Card border="light" className="bg-transparent text-black">
+              <Card border="light">
                 <Card.Img
                   src={ByRequestImage}
                   width={100}
                   height="100%"
                   alt="Card image"
                 />
-                <Card.ImgOverlay>
-                  <Card.Title className="d-flex text-uppercase mt-5 text-center align-center bg-light">
+                <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
+                  <Card.Body className="text-uppercase mt-5 ">
                     By Request
-                  </Card.Title>
+                  </Card.Body>
                 </Card.ImgOverlay>
               </Card>
             </Col>
@@ -131,17 +138,22 @@ const MainPage = () => {
                   width={100}
                   height="100%"
                   alt="Card image"
+                  style={{
+                    height: "395px",
+                    objectFit: "cover",
+                    objectPosition: "100% 60%",
+                  }}
                 />
-                <Card.ImgOverlay>
-                  <Card.Title className="d-flex text-uppercase mt-5 text-center align-center bg-light">
+                <Card.ImgOverlay className="d-flex justify-content-start align-items-end text-white">
+                  <Card.Body className="text-uppercase mt-5">
                     Essentials
-                  </Card.Title>
+                  </Card.Body>
                 </Card.ImgOverlay>
               </Card>
             </Col>
           </Row>
         </Col>
-      </Container>
+      </motion.div>
     </>
   );
 };

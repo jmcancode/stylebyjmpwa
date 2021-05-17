@@ -1,8 +1,14 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import { motion } from "framer-motion";
+
 const AboutUsPage = () => {
   return (
-    <Container>
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="container"
+    >
       <Row>
         <Col>
           <h3 className="text-uppercase text-center">our Story</h3>
@@ -44,7 +50,7 @@ const AboutUsPage = () => {
           </p>
         </Col>
       </Row>
-    </Container>
+    </motion.div>
   );
 };
 

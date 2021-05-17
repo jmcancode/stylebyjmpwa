@@ -17,7 +17,7 @@ const AccPage = () => {
               height="100%"
               alt="Card image"
             />
-            <Card.ImgOverlay>
+            <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
               <Card.Title className="d-flex text-uppercase">
                 Shop All
               </Card.Title>
@@ -33,9 +33,9 @@ const AccPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
-                  SNEAKERS
+                  Cedar Shoe Inserts
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>
@@ -48,9 +48,9 @@ const AccPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
-                  Flexi Sole
+                  Leather Care
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>

@@ -17,6 +17,8 @@ import layercake15 from "../assets/RyanHunter/layercakexjm-15.JPG";
 import layercake19 from "../assets/RyanHunter/layercakexjm-19.JPG";
 import layercake23 from "../assets/RyanHunter/layercakexjm-23.JPG";
 
+import { FaStar } from "react-icons/fa";
+
 export default function CollabDetail() {
   const settings = {
     dots: true,
@@ -67,7 +69,7 @@ export default function CollabDetail() {
             <span className="fw-bold pl-2">Green</span>
           </Col>
           <Col className="text-right">
-            <a href="/" as={Link} to="/" style={{ color: "red" }}>
+            <a href="/" style={{ color: "red" }}>
               View size guide
             </a>
           </Col>
@@ -103,13 +105,13 @@ export default function CollabDetail() {
               variant="light"
               style={{ backgroundColor: "transparent", borderColor: "#1f1f1f" }}
             >
-              Add to Wish List
+              <FaStar /> Add to Wish List
             </Button>
           </Col>
         </Row>
         <Row xs={1} md={1} lg={1} className="pt-3">
           <Col>
-            <Accordion defaultActiveKey="0">
+            <Accordion>
               <Card>
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="outlined" eventKey="0">
@@ -121,8 +123,8 @@ export default function CollabDetail() {
                     <p>
                       {" "}
                       Curated by Los Angeles based artist, Horace Wormley. The
-                      LayerCake - Louis Smoking Slipper embodies elegance and
-                      the creative energy of the LA Native.
+                      LayerCake - Louis Smoking Slipper embodies the elegance
+                      and creative energy of the LA Native.
                       <br />
                       <br />
                       This collection is limited to 10 units and will only be

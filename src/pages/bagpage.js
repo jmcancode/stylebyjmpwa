@@ -17,7 +17,7 @@ const BagsPage = () => {
               height="100%"
               alt="Card image"
             />
-            <Card.ImgOverlay>
+            <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
               <Card.Title className="d-flex text-uppercase">
                 Shop All
               </Card.Title>
@@ -33,7 +33,7 @@ const BagsPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
                   SNEAKERS
                 </Card.Title>
@@ -48,7 +48,7 @@ const BagsPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
                   Flexi Sole
                 </Card.Title>

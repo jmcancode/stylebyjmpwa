@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, InputGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase/config";
 import "./foooter.css";
+import { motion } from "framer-motion";
 
 import { SocialIcon } from "react-social-icons";
 
@@ -28,8 +29,10 @@ const FooterComponent = () => {
 
   return (
     <>
-      <Container
-        className="pt-3 mt-3 text-left"
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className=" container pt-3 mt-3 text-left"
         style={{ backgroundColor: "#f5f5f5", width: "100%", borderRadius: 5 }}
       >
         <Row className="m-1 pb-4" xs={1} md={1} lg={1}>
@@ -113,9 +116,9 @@ const FooterComponent = () => {
             />
           </Col>
         </Row>
-      </Container>
+      </motion.div>
       <Container fluid className="mt-4">
-        <Row className="text-center" xs={3} md={3} lg={3}>
+        <Row className="text-center" xs={4} md={4} lg={4}>
           <Col>
             <Link style={{ color: "#777" }} to="/myaccount">
               My Account
@@ -127,8 +130,13 @@ const FooterComponent = () => {
             </Link>
           </Col>
           <Col>
-            <Link style={{ color: "#777" }} to="/">
+            <Link style={{ color: "#777" }} to="/policy">
               Policy
+            </Link>
+          </Col>
+          <Col>
+            <Link style={{ color: "#777" }} to="/legal">
+              Legal
             </Link>
           </Col>
         </Row>

@@ -16,6 +16,7 @@ const UserAccount = () => {
 
   const [loader, setLoader] = useState("");
   const { currentUser } = useAuth();
+  // eslint-disable-next-line 
   const [users, setUsers] = useState([]);
 
   const handleUserSumbit = (e) => {

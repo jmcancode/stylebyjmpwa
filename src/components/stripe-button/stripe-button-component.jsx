@@ -16,6 +16,7 @@ const StripeCheckoutButton = ({ price }) => {
       billingAddress
       image={JMLogo}
       shippingAddress
+      // eslint-disable-next-line 
       description="Your total is $${price}"
       amount={priceForStripe}
       panelLabel="Pay Now"

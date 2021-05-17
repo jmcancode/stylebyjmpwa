@@ -6,20 +6,20 @@ import DGandyImage from "../assets/dgandy.jpg";
 import SlipOn from "../assets/IMG_0784.JPG";
 import BagImage from "../assets/sneakers.jpg";
 import FeatureImage from "../assets/bag.jpg";
-
+import { Link } from "react-router-dom";
 const MensPage = () => {
   return (
     <Container className="justify-content-center align-center">
       <Col lg={true}>
         <Row noGutters={true} xs={1} md={1} lg={1} className="w-100">
-          <Card border="light">
+          <Card as={Link} to="/shopallmens" border="light">
             <Card.Img
               src={FeatureImage}
               width={100}
               height="100%"
               alt="Card image"
             />
-            <Card.ImgOverlay>
+            <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
               <Card.Title className="d-flex text-uppercase">
                 Shop All
               </Card.Title>
@@ -35,7 +35,7 @@ const MensPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
                   SNEAKERS
                 </Card.Title>
@@ -50,7 +50,7 @@ const MensPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
                   Flexi Sole
                 </Card.Title>
@@ -67,7 +67,7 @@ const MensPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase text-black">
                   Slip-on
                 </Card.Title>
@@ -84,7 +84,7 @@ const MensPage = () => {
                 height="100%"
                 alt="Card image"
               />
-              <Card.ImgOverlay>
+              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase text-white">
                   ESSENTIALS
                 </Card.Title>

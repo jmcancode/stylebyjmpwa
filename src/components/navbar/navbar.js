@@ -5,12 +5,14 @@ import {
   NavDropdown,
   NavbarBrand,
   Container,
-  Image,
+  
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/jmlogo.png";
-import Cart from "../../assets/shopping-bag.svg";
+
+
+import { FaShoppingBag } from "react-icons/fa";
 
 import "../../App.css";
 
@@ -69,14 +71,14 @@ const TopNavBar = () => {
               to="/checkout"
               className="d-none d-sm-block d-sm-none d-md-block"
             >
-              <Image src={Cart} alt="shopping-cart" /> My Bag
+              <FaShoppingBag />
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/checkout"
               className="d-none d-sm-block d-md-none d-block d-sm-none"
             >
-              My Bag
+              Cart
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
