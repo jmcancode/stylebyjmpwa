@@ -18,6 +18,7 @@ const MensPage = () => {
               width={100}
               height="100%"
               alt="Card image"
+              style={{ height: "395px", objectFit: "scale-down" }}
             />
             <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
               <Card.Title className="d-flex text-uppercase">
@@ -34,6 +35,7 @@ const MensPage = () => {
                 width={100}
                 height="100%"
                 alt="Card image"
+                style={{ height: "395px", objectFit: "cover" }}
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
@@ -49,6 +51,7 @@ const MensPage = () => {
                 width="100%"
                 height="100%"
                 alt="Card image"
+                style={{ height: "395px", objectFit: "stretch" }}
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
@@ -66,6 +69,7 @@ const MensPage = () => {
                 width={100}
                 height="100%"
                 alt="Card image"
+                style={{ height: "395px", objectFit: "scale-down" }}
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase text-black">
@@ -83,6 +87,11 @@ const MensPage = () => {
                 width={100}
                 height="100%"
                 alt="Card image"
+                style={{
+                  height: "395px",
+                  objectFit: "cover",
+                  objectPosition: "0% 100%",
+                }}
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase text-white">

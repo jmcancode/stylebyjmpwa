@@ -10,12 +10,11 @@ import {
   Image,
 } from "react-bootstrap";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import layercake11 from "../assets/RyanHunter/layercakexjm-11.JPG";
 import layercake15 from "../assets/RyanHunter/layercakexjm-15.JPG";
 import layercake19 from "../assets/RyanHunter/layercakexjm-19.JPG";
-import layercake23 from "../assets/RyanHunter/layercakexjm-23.JPG";
 
 import { FaStar } from "react-icons/fa";
 
@@ -43,9 +42,6 @@ export default function CollabDetail() {
               </div>
               <div>
                 <Image thumbnail src={layercake19} />
-              </div>
-              <div>
-                <Image thumbnail src={layercake23} />
               </div>
             </Slider>
           </Col>

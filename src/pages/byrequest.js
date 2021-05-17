@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Col, Row, Image, Modal, Card, Form, Button } from "react-bootstrap";
+import { Col, Row, Image, Modal, Form, Button, Card } from "react-bootstrap";
 import PhotoOne from "../assets/loafer.jpg";
 import PurpleOne from "../assets/purplestach.jpg";
 import SneakerOne from "../assets/sneakers.jpg";
 import Datetime from "react-datetime";
 import "react-datetime/css/react-datetime.css";
 import { motion } from "framer-motion";
+import { BiCalendar } from "react-icons/bi";
+import bgImage from "../assets/PH4_5258.jpg";
 
 const ByRequestPage = () => {
   const [show, setShow] = useState(false);
@@ -18,11 +20,26 @@ const ByRequestPage = () => {
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
+        className="card border-light"
+      >
+        <Card.Img
+          src={bgImage}
+          alt="Card image"
+          style={{ height: "355px", objectFit: "cover", padding: 5 }}
+        />
+        <Card.ImgOverlay className="d-flex justify-content-center align-items-center">
+          <Card.Title className="text-white display-4 text-uppercase">
+            By Request
+          </Card.Title>
+        </Card.ImgOverlay>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
         className="container"
       >
         <Row noGutters={true}>
           <Col>
-            <h1 className="text-center">By Request</h1>
             <p>
               Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
               Proin eget tortor risus. Praesent sapien massa, convallis a
@@ -65,10 +82,15 @@ const ByRequestPage = () => {
             </p>
           </Col>
         </Row>
-        <Row xs={1} md={1} lg={1}>
+        <Row xs={1} md={3} lg={3}>
           <Col>
-            <Button onClick={handleShow} size="sm" variant="dark" block>
-              Schedule a private build
+            <Button
+              style={{ color: "#1f1f1f", textDecoration: "none" }}
+              onClick={handleShow}
+              size="sm"
+              variant="link"
+            >
+              <BiCalendar color="#1f1f1f" className="mb-1" /> Schedule a viewing
             </Button>
           </Col>
           <Modal
@@ -104,23 +126,21 @@ const ByRequestPage = () => {
                   </Form.Group>
                 </Form.Row>
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                  <Form.Label>Budget</Form.Label>
+                  <Form.Label>Your budget</Form.Label>
                   <Form.Control as="select">
                     <option>Choose one...</option>
                     <option>$250.00 - $500.00</option>
                     <option>$500.00 - $1,000.00</option>
-                    <option>4</option>
-                    <option>5</option>
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>Select a Location</Form.Label>
                   <Form.Control as="select">
                     <option>Choose one...</option>
-                    <option>Dominion Ridge - San Antonio</option>
+                    <option>In-Home</option>
+                    <option>In-Office</option>
                     <option>Geekdom</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>Dominion Ridge</option>
                   </Form.Control>
                 </Form.Group>
                 <Datetime

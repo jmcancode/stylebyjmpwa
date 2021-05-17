@@ -5,12 +5,10 @@ import {
   NavDropdown,
   NavbarBrand,
   Container,
-  
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/jmlogo.png";
-
 
 import { FaShoppingBag } from "react-icons/fa";
 
@@ -33,37 +31,35 @@ const TopNavBar = () => {
             <Nav.Link as={Link} to="/bags" href="#womens">
               Women
             </Nav.Link>
+            <Nav.Link as={Link} to="/collabs" href="#collaborations">
+              Collaborations
+            </Nav.Link>
             <NavDropdown title="Accessories" id="collasible-nav-dropdown">
-              <NavDropdown.Item
-                as={Link}
-                to="/accessories"
-                href="#action/shoecare"
-              >
-                Leather Care
-              </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
                 to="/accessories"
                 href="#action/laces"
               >
-                Laces
+                Bags
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/accessories" href="#action/3.4">
-                Shoe Inserts
+                Belts
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/accessories" href="#action/3.5">
-                Cream & Polish
+                Laces
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/collabs" href="#collaborations">
-              Collaborations
-            </Nav.Link>
             <Nav.Link as={Link} to="/byrequest" href="#byrequest">
               By Request
             </Nav.Link>
-            <Nav.Link as={Link} to="/aboutus" eventKey={2} href="#aboutus">
-              Heritage
-            </Nav.Link>
+            <NavDropdown title="Heritage" id="collasible-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/aboutus">
+                Made in Spain
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/aboutus" href="#action/3.4">
+                Designed in San Antonio, Texas
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
           <Nav>
             <Nav.Link

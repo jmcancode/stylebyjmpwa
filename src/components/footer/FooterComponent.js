@@ -118,26 +118,24 @@ const FooterComponent = () => {
         </Row>
       </motion.div>
       <Container fluid className="mt-4">
-        <Row className="text-center" xs={4} md={4} lg={4}>
+        <Row className=" text-uppercase text-center" xs={3} md={3} lg={3}>
           <Col>
             <Link style={{ color: "#777" }} to="/myaccount">
-              My Account
+              Corporate
             </Link>
           </Col>
           <Col>
             <Link style={{ color: "#777" }} to="/stockist">
-              Stockist
+              At your service
             </Link>
           </Col>
           <Col>
             <Link style={{ color: "#777" }} to="/policy">
-              Policy
+              Customer Care
             </Link>
           </Col>
           <Col>
-            <Link style={{ color: "#777" }} to="/legal">
-              Legal
-            </Link>
+            <Link style={{ color: "#777" }} to="/legal"></Link>
           </Col>
         </Row>
       </Container>

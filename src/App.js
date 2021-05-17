@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./firebase/context";
 
 import TopNavBar from "./components/navbar/navbar";
+import TopTopNav from "./components/topNav/topNav";
 
 import MainPage from "./pages/main";
 import FourOhFour from "./pages/errorpage";
@@ -29,6 +30,7 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
+          <TopTopNav />
           <TopNavBar />
           <Switch>
             <Route exact path="/" component={MainPage} />
