@@ -28,30 +28,19 @@ const TopNavBar = () => {
             <Nav.Link as={Link} to="/collabs" href="#collaborations">
               Collaborations
             </Nav.Link>
-            <NavDropdown title="Accessories" id="collasible-nav-dropdown">
-              <NavDropdown.Item
-                as={Link}
-                to="/accessories"
-                href="#action/laces"
-              >
-                Bags
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/accessories" href="#action/3.4">
-                Belts
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/accessories" href="#action/3.5">
-                Laces
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link as={Link} to="/accessories" href="#accesories">
+              Accessories
+            </Nav.Link>
+
             <Nav.Link as={Link} to="/byrequest" href="#byrequest">
               By Request
             </Nav.Link>
             <NavDropdown title="Heritage" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/aboutus">
+              <NavDropdown.Item as={Link} to="/aboutus" href="#action/3.3">
                 Made in Spain
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/aboutus" href="#action/3.4">
-                Designed in San Antonio, Texas
+                Designed in San Antonio
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

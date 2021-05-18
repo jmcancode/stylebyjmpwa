@@ -8,7 +8,7 @@ const AboutUsPage = () => {
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        className="card border-light"
+        className="card border-light p-2"
       >
         <Card.Img
           src={bgImage}
@@ -17,11 +17,12 @@ const AboutUsPage = () => {
             height: "355px",
             objectFit: "cover",
             objectPosition: "0% 10%",
+            opacity: "0.79",
           }}
         />
         <Card.ImgOverlay className="d-flex justify-content-center align-items-center">
-          <Card.Title className="text-white display-4 text-uppercase">
-            <h1>Almansa, Spain</h1>
+          <Card.Title className="text-white text-uppercase">
+            <h2 className="text-wrap">Almansa, Spain</h2>
           </Card.Title>
         </Card.ImgOverlay>
       </motion.div>
@@ -30,7 +31,7 @@ const AboutUsPage = () => {
         animate={{ opacity: 1, y: 0 }}
         className="container"
       >
-        <Row>
+        <Row className="pt-4">
           <Col>
             <p className="text-left">
               Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus

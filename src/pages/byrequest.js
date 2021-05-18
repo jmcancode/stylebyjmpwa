@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col, Row, Image, Modal, Form, Button, Card } from "react-bootstrap";
 import PhotoOne from "../assets/loafer.jpg";
 import PurpleOne from "../assets/purplestach.jpg";
-import SneakerOne from "../assets/sneakers.jpg";
+import SneakerOne from "../assets/29a3bcc8-f078-4663-b078-8f9a0325b8ec-B.jpg";
 import Datetime from "react-datetime";
 import "react-datetime/css/react-datetime.css";
 import { motion } from "framer-motion";
@@ -20,16 +20,24 @@ const ByRequestPage = () => {
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        className="card border-light"
+        className="card border-light p-2"
+        style={{ borderColor: "transparent" }}
       >
         <Card.Img
           src={bgImage}
           alt="Card image"
-          style={{ height: "355px", objectFit: "cover", padding: 5 }}
+          style={{
+            height: "355px",
+            objectFit: "cover",
+            padding: 5,
+            opacity: ".79",
+          }}
         />
         <Card.ImgOverlay className="d-flex justify-content-center align-items-center">
-          <Card.Title className="text-white display-4 text-uppercase">
-            By Request
+          <Card.Title
+            className="text-white display-4 text-uppercase"
+          >
+            <h2 style={{ fontSize: "3rem" }}>By Request</h2>
           </Card.Title>
         </Card.ImgOverlay>
       </motion.div>
@@ -38,7 +46,7 @@ const ByRequestPage = () => {
         animate={{ opacity: 1, y: 0 }}
         className="container"
       >
-        <Row noGutters={true}>
+        <Row className="pt-4" noGutters={true}>
           <Col>
             <p>
               Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
@@ -157,7 +165,7 @@ const ByRequestPage = () => {
             </Modal.Body>
           </Modal>
         </Row>
-        <Row className="text-center" xs={3} md={3} lg={3}>
+        <Row className="text-center pt-3" xs={3} md={3} lg={3}>
           <Col>
             <Image
               fluid

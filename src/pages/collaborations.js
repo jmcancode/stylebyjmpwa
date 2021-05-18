@@ -3,9 +3,9 @@ import { Col, Button, Row, Card } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import MensImage from "../assets/essential-captoe.png";
+import MensImage from "../assets/Images/IMG_0778.JPG";
 import BagImage from "../assets/RyanHunter/IMG_2685.JPG";
-import FeatureImage from "../assets/RyanHunter/layercakexjm-19.JPG";
+import FeatureImage from "../assets/RyanHunter/layercakexjm-15.JPG";
 
 const CollabPage = () => {
   return (
@@ -21,20 +21,30 @@ const CollabPage = () => {
             className="card"
             to="/collabdetail"
             border="light"
-            style={{ color: "#1f1f1f" }}
+            style={{
+              color: "#1f1f1f",
+              backgroundColor: "#fdfdfd",
+              borderColor: "transparent",
+            }}
           >
             <Card.Img
               thumbnail
               src={FeatureImage}
               width={100}
               alt="Card image"
+              style={{
+                height: "395px",
+                objectFit: "scale-down",
+              }}
             />
             <Card.ImgOverlay
               className="d-flex justify-content-start align-items-end"
               bg="dark"
             >
               <Card.Text className=" d-column-flex justify-content-end align-center text-uppercase">
-                <h5>LayerCake Los Angeles</h5>
+                <h5>
+                  LayerCake <span style={{ color: "red" }}>Los Angeles</span>
+                </h5>
                 <Button as={Link} to="/collabdetail" size="sm" variant="light">
                   Shop
                 </Button>
@@ -44,16 +54,18 @@ const CollabPage = () => {
         </Col>
         <Row noGutters={true} className="pt-2" xs={12} md={2} lg={2}>
           <Col sm>
-            <motion.div
-              className="w-100 h-100 p-1 card border-light"
-              style={{ width: "100%" }}
+            <Card
+              style={{ borderColor: "transparent" }}
+              className="w-100 h-100 "
             >
               <Card.Img
                 src={BagImage}
                 width="100%"
-                height="100%"
                 alt="Card image"
-                style={{ objectFit: "cover" }}
+                style={{
+                  height: "395px",
+                  objectFit: "cover",
+                }}
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="text-left text-uppercase">
@@ -68,16 +80,24 @@ const CollabPage = () => {
                   </Button>
                 </Card.Title>
               </Card.ImgOverlay>
-            </motion.div>
+            </Card>
           </Col>
           <Col sm>
-            <motion.div className="card p-1 border-light">
+            <Card
+              style={{ borderColor: "transparent" }}
+              className=" p-1 "
+            >
               <Card.Img
                 src={MensImage}
                 width="100%"
                 height="100%"
                 alt="Card image"
                 className="p-2 pt-5"
+                style={{
+                  height: "395px",
+                  objectFit: "scale-down",
+                  objectPosition: "100% -50%",
+                }}
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="text-left text-uppercase">
@@ -92,7 +112,7 @@ const CollabPage = () => {
                   </Button>
                 </Card.Title>
               </Card.ImgOverlay>
-            </motion.div>
+            </Card>
           </Col>
         </Row>
       </Row>

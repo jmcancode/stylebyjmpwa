@@ -1,21 +1,26 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import MensImage from "../assets/gywflex-infographic.jpg";
-
-import BagImage from "../assets/sneakers.jpg";
-import FeatureImage from "../assets/bag.jpg";
+import { Row, Col, Card } from "react-bootstrap";
+import MensImage from "../assets/Images/IMG_1327.JPG";
+import { motion } from "framer-motion";
+import BagImage from "../assets/Images/IMG_1261.PNG";
+import FeatureImage from "../assets/Images/IMG_2709.JPG";
 
 const AccPage = () => {
   return (
-    <Container className="justify-content-center align-center">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="container justify-content-center align-center"
+    >
       <Col lg={true}>
         <Row noGutters={true} xs={1} md={1} lg={1} className="w-100">
-          <Card border="light">
+          <Card style={{ borderColor: "transparent" }}>
             <Card.Img
               src={FeatureImage}
               width={100}
               height="100%"
               alt="Card image"
+              style={{ height: "395px", objectFit: "contain" }}
             />
             <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
               <Card.Title className="d-flex text-uppercase">
@@ -26,7 +31,10 @@ const AccPage = () => {
         </Row>
         <Row xs={1} md={2} lg={2}>
           <Col>
-            <Card border="light" className="w-100 h-100">
+            <Card
+              style={{ borderColor: "transparent" }}
+              className="w-100 h-100"
+            >
               <Card.Img
                 src={BagImage}
                 width={100}
@@ -35,13 +43,13 @@ const AccPage = () => {
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
-                  Cedar Shoe Inserts
+                  Shoe Inserts
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>
           </Col>
           <Col>
-            <Card border="light">
+            <Card style={{ borderColor: "transparent" }}>
               <Card.Img
                 src={MensImage}
                 width="100%"
@@ -49,15 +57,13 @@ const AccPage = () => {
                 alt="Card image"
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
-                <Card.Title className="d-flex text-uppercase">
-                  Leather Care
-                </Card.Title>
+                <Card.Title className="d-flex text-uppercase">Belts</Card.Title>
               </Card.ImgOverlay>
             </Card>
           </Col>
         </Row>
       </Col>
-    </Container>
+    </motion.div>
   );
 };
 

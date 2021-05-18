@@ -1,63 +1,34 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import MensImage from "../assets/gywflex-infographic.jpg";
-
-import BagImage from "../assets/sneakers.jpg";
-import FeatureImage from "../assets/bag.jpg";
+import { Row, Col, Card } from "react-bootstrap";
+import FeatureImage from "../assets/slippers/Rose - Tan Linen - horse-Ang5.jpg";
+import { motion } from "framer-motion";
 
 const BagsPage = () => {
   return (
-    <Container className="justify-content-center align-center">
-      <Col lg={true}>
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="container justify-content-center align-center"
+    >
+      <Col style={{ height: "55vh" }} lg={true}>
         <Row noGutters={true} xs={1} md={1} lg={1} className="w-100">
-          <Card border="light">
+          <Card style={{ borderColor: "transparent" }}>
             <Card.Img
               src={FeatureImage}
               width={100}
               height="100%"
               alt="Card image"
+              style={{ height: "395px", objectFit: "scale-down" }}
             />
             <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
               <Card.Title className="d-flex text-uppercase">
-                Shop All
+                Slippers
               </Card.Title>
             </Card.ImgOverlay>
           </Card>
         </Row>
-        <Row xs={1} md={2} lg={2}>
-          <Col>
-            <Card border="light" className="w-100 h-100">
-              <Card.Img
-                src={BagImage}
-                width={100}
-                height="100%"
-                alt="Card image"
-              />
-              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
-                <Card.Title className="d-flex text-uppercase">
-                  SNEAKERS
-                </Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-          </Col>
-          <Col>
-            <Card border="light">
-              <Card.Img
-                src={MensImage}
-                width="100%"
-                height="100%"
-                alt="Card image"
-              />
-              <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
-                <Card.Title className="d-flex text-uppercase">
-                  Flexi Sole
-                </Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-          </Col>
-        </Row>
       </Col>
-    </Container>
+    </motion.div>
   );
 };
 
