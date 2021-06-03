@@ -3,17 +3,52 @@ import { Col, Row, Image, Modal, Form, Button, Card } from "react-bootstrap";
 import PhotoOne from "../assets/loafer.jpg";
 import PurpleOne from "../assets/purplestach.jpg";
 import SneakerOne from "../assets/29a3bcc8-f078-4663-b078-8f9a0325b8ec-B.jpg";
-import Datetime from "react-datetime";
+
 import "react-datetime/css/react-datetime.css";
 import { motion } from "framer-motion";
 import { BiCalendar } from "react-icons/bi";
 import bgImage from "../assets/PH4_5258.jpg";
+import { db } from "../firebase/config";
 
 const ByRequestPage = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [loading, setLoading] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
+  const [budget, setBudget] = useState("");
+  const [location, setLocation] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(false);
+
+    db.collection("byRequestApps")
+      .add({
+        fullName: fullName,
+        email: email,
+        tel: tel,
+        budget: budget,
+        location: location,
+      })
+      .then(() => {
+        setLoading(false);
+        alert(
+          "Successful request, a member of our team will contact you within 48 hours to schedule a time and date."
+        );
+      })
+      .catch((err) => {
+        alert(err.message);
+        setLoading(false);
+      });
+    setFullName("");
+    setEmail("");
+    setBudget("");
+    setLocation("");
+    setTel("");
+  };
 
   return (
     <>
@@ -26,6 +61,7 @@ const ByRequestPage = () => {
         <Card.Img
           src={bgImage}
           alt="Card image"
+          load="lazy"
           style={{
             height: "355px",
             objectFit: "cover",
@@ -34,9 +70,7 @@ const ByRequestPage = () => {
           }}
         />
         <Card.ImgOverlay className="d-flex justify-content-center align-items-center">
-          <Card.Title
-            className="text-white display-4 text-uppercase"
-          >
+          <Card.Title className="text-white display-4 text-uppercase">
             <h2 style={{ fontSize: "3rem" }}>By Request</h2>
           </Card.Title>
         </Card.ImgOverlay>
@@ -111,18 +145,27 @@ const ByRequestPage = () => {
               <Modal.Title>A little about you</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Full Name</Form.Label>
-                    <Form.Control type="text" placeholder="First Last" />
+                    <Form.Control
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      type="text"
+                      placeholder="First Last"
+                      required
+                    />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       placeholder="firstlast@example.com"
+                      required
                     />
                   </Form.Group>
                 </Form.Row>
@@ -130,12 +173,22 @@ const ByRequestPage = () => {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridCity">
                     <Form.Label>Phone Number</Form.Label>
-                    <Form.Control placeholder="210-123-1234" />
+                    <Form.Control
+                      value={tel}
+                      onChange={(e) => setTel(e.target.value)}
+                      placeholder="210-123-1234"
+                      required
+                    />
                   </Form.Group>
                 </Form.Row>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>Your budget</Form.Label>
-                  <Form.Control as="select">
+                  <Form.Control
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    as="select"
+                    required
+                  >
                     <option>Choose one...</option>
                     <option>$250.00 - $500.00</option>
                     <option>$500.00 - $1,000.00</option>
@@ -143,7 +196,12 @@ const ByRequestPage = () => {
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>Select a Location</Form.Label>
-                  <Form.Control as="select">
+                  <Form.Control
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    as="select"
+                    required
+                  >
                     <option>Choose one...</option>
                     <option>In-Home</option>
                     <option>In-Office</option>
@@ -151,15 +209,18 @@ const ByRequestPage = () => {
                     <option>Dominion Ridge</option>
                   </Form.Control>
                 </Form.Group>
-                <Datetime
+                {/* <Datetime
                   closeOnSelect={true}
                   closeOnClickOutside={true}
                   dateFormat={true}
                   timeFormat={true}
-                  value={new Date()}
-                />
+                  placeholder="select a date and time"
+                  value={dateTimer}
+                  onChange={(e) => setDateTimer(e.target.value)}
+                  required
+                /> */}
                 <Button className="mt-2" variant="dark" block type="submit">
-                  Submit
+                  {loading ? "Loading..." : "Submit"}
                 </Button>
               </Form>
             </Modal.Body>

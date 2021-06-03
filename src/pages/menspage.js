@@ -26,6 +26,7 @@ const MensPage = () => {
               width={100}
               height="100%"
               alt="Card image"
+              load="lazy"
               style={{
                 height: "395px",
                 objectFit: "cover",
@@ -49,6 +50,7 @@ const MensPage = () => {
                 src={BagImage}
                 width={100}
                 height="100%"
+                load="lazy"
                 alt="Card image"
                 style={{ height: "395px", objectFit: "cover" }}
               />
@@ -66,6 +68,7 @@ const MensPage = () => {
                 width="100%"
                 height="100%"
                 alt="Card image"
+                load="lazy"
                 style={{
                   height: "395px",
                   objectFit: "cover",
@@ -87,6 +90,7 @@ const MensPage = () => {
                 src={SlipOn}
                 width={100}
                 height="100%"
+                load="lazy"
                 alt="Card image"
                 style={{ height: "395px", objectFit: "scale-down" }}
               />
@@ -106,6 +110,7 @@ const MensPage = () => {
                 width={100}
                 height="100%"
                 alt="Card image"
+                load="lazy"
                 style={{
                   height: "395px",
                   objectFit: "cover",

@@ -23,7 +23,7 @@ const CollabPage = () => {
             border="light"
             style={{
               color: "#1f1f1f",
-              backgroundColor: "#fdfdfd",
+
               borderColor: "transparent",
             }}
           >
@@ -32,6 +32,7 @@ const CollabPage = () => {
               src={FeatureImage}
               width={100}
               alt="Card image"
+              load="lazy"
               style={{
                 height: "395px",
                 objectFit: "scale-down",
@@ -62,6 +63,7 @@ const CollabPage = () => {
                 src={BagImage}
                 width="100%"
                 alt="Card image"
+                load="lazy"
                 style={{
                   height: "395px",
                   objectFit: "cover",
@@ -83,15 +85,13 @@ const CollabPage = () => {
             </Card>
           </Col>
           <Col sm>
-            <Card
-              style={{ borderColor: "transparent" }}
-              className=" p-1 "
-            >
+            <Card style={{ borderColor: "transparent" }} className=" p-1 ">
               <Card.Img
                 src={MensImage}
                 width="100%"
                 height="100%"
                 alt="Card image"
+                load="lazy"
                 className="p-2 pt-5"
                 style={{
                   height: "395px",

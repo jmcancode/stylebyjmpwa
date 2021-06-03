@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "../../firebase/context";
+import CurrentUserContext from "../../context/currentUser/current-user.context";
 
 export default function PrivateRoute({ component: Component, ...rest }) {
-  const { currentUser } = useAuth();
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <Route
@@ -12,7 +12,7 @@ export default function PrivateRoute({ component: Component, ...rest }) {
         return currentUser ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/login" />
+          <Redirect to="/signIn" />
         );
       }}
     ></Route>

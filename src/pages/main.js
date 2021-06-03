@@ -25,6 +25,7 @@ const MainPage = () => {
                 className="bg-transparent text-black "
               >
                 <Card.Img
+                  load="lazy"
                   src={FeatureImage}
                   width={100}
                   height="100%"
@@ -52,6 +53,7 @@ const MainPage = () => {
                   width={100}
                   height="100%"
                   alt="Card image"
+                  load="lazy"
                 />
                 <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                   <Card.Body className="text-uppercase mt-5 ">Bags</Card.Body>
@@ -65,6 +67,7 @@ const MainPage = () => {
                   src={MensImage}
                   width="100%"
                   height="100%"
+                  load="lazy"
                   alt="Card image"
                 />
                 <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
@@ -83,6 +86,7 @@ const MainPage = () => {
                   width={100}
                   height="100%"
                   alt="Card image"
+                  load="lazy"
                   style={{
                     height: "395px",
                     objectFit: "cover",
@@ -106,6 +110,7 @@ const MainPage = () => {
                   width={100}
                   height="100%"
                   alt="Card image"
+                  load="lazy"
                 />
                 <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                   <Card.Body className=" text-uppercase mt-5">
@@ -122,6 +127,7 @@ const MainPage = () => {
                   width={100}
                   height="100%"
                   alt="Card image"
+                  load="lazy"
                 />
                 <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                   <Card.Body className="text-uppercase mt-5 ">
@@ -143,6 +149,7 @@ const MainPage = () => {
                   width={100}
                   height="100%"
                   alt="Card image"
+                  load="lazy"
                   style={{
                     height: "395px",
                     objectFit: "cover",

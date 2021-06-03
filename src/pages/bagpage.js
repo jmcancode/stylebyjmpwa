@@ -17,6 +17,7 @@ const BagsPage = () => {
               src={FeatureImage}
               width={100}
               height="100%"
+              load="lazy"
               alt="Card image"
               style={{ height: "395px", objectFit: "scale-down" }}
             />

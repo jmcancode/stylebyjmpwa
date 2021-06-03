@@ -1,16 +1,20 @@
 import React from "react";
-import { Container, Row, Col, CardDeck, Card, Button } from "react-bootstrap";
-
+import { Row, Col, CardDeck, Card, Button } from "react-bootstrap";
+import { motion } from "framer-motion";
 import imageOne from "../assets/loafer.jpg";
 export default function ShopAllMen() {
   return (
     <>
-      <Container fluid>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="container"
+      >
         <Row xs={1} md={1} lg={1}>
           <Col>
             <CardDeck>
-              <Card border="light">
-                <Card.Img variant="top" src={imageOne} />
+              <Card style={{ borderColor: "transparent" }} border="light">
+                <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
                   <Card.Title>Louis Loafer</Card.Title>
                   <Card.Text>
@@ -33,7 +37,7 @@ export default function ShopAllMen() {
                 </Card.Footer>
               </Card>
               <Card border="light">
-                <Card.Img variant="top" src={imageOne} />
+                <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
                   <Card.Title>Louis Loafer</Card.Title>
                   <Card.Text>
@@ -57,7 +61,7 @@ export default function ShopAllMen() {
                 </Card.Footer>
               </Card>
               <Card border="light">
-                <Card.Img variant="top" src={imageOne} />
+                <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
                   <Card.Title>Louis Loafer</Card.Title>
                   <Card.Text>
@@ -86,7 +90,7 @@ export default function ShopAllMen() {
           <Col>
             <CardDeck>
               <Card border="light">
-                <Card.Img variant="top" src={imageOne} />
+                <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
                   <Card.Title>Louis Loafer</Card.Title>
                   <Card.Text>
@@ -110,7 +114,7 @@ export default function ShopAllMen() {
                 </Card.Footer>
               </Card>
               <Card border="light">
-                <Card.Img variant="top" src={imageOne} />
+                <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
                   <Card.Title>Louis Loafer</Card.Title>
                   <Card.Text>
@@ -134,7 +138,7 @@ export default function ShopAllMen() {
                 </Card.Footer>
               </Card>
               <Card border="light">
-                <Card.Img variant="top" src={imageOne} />
+                <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
                   <Card.Title>Louis Loafer</Card.Title>
                   <Card.Text>
@@ -165,7 +169,7 @@ export default function ShopAllMen() {
             <Card className="h-25"></Card>
           </Col>
         </Row>
-      </Container>
+      </motion.div>
     </>
   );
 }

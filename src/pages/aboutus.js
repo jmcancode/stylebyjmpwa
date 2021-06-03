@@ -13,6 +13,7 @@ const AboutUsPage = () => {
         <Card.Img
           src={bgImage}
           alt="Card image"
+          load="lazy"
           style={{
             height: "355px",
             objectFit: "cover",

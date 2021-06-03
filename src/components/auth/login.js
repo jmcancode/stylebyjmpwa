@@ -1,15 +1,10 @@
 import React, { useRef, useState } from "react";
-import {
-  Form,
-  Button,
-  Card,
-  Alert,
-  Container,
-  Col,
-  Row,
-} from "react-bootstrap";
+import { Form, Button, Card, Alert, Col, Row } from "react-bootstrap";
 import { useAuth } from "../../firebase/context";
+import { signInWithGoogle } from "../../firebase/config";
 import { Link, useHistory } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { motion } from "framer-motion";
 
 export default function Login() {
   const emailRef = useRef();
@@ -36,12 +31,16 @@ export default function Login() {
 
   return (
     <>
-      <Container className="mt-5 pt-5 pl-4 pr-4 w-100 h-100">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="container mt-5 pt-5 pl-4 pr-4 w-100 h-100"
+      >
         <Row>
           <Col>
-            <Card>
+            <Card style={{ borderColor: "transparent" }}>
               <Card.Body>
-                <h2 className="text-center mb-4">Log In</h2>
+                <h2 className="text-center mb-4">Welcome back</h2>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <Form onSubmit={handleSubmit}>
                   <Form.Group id="email">
@@ -61,14 +60,26 @@ export default function Login() {
                     Log In
                   </Button>
                 </Form>
-                <div className="w-100 text-center mt-3">
+                <Button
+                  style={{
+                    backgroundColor: "transparent",
+                    borderColor: "#DB4437",
+                  }}
+                  block
+                  className="mt-2"
+                  variant="light"
+                >
+                  <FcGoogle size="24" onClick={signInWithGoogle} /> Sign-in w/
+                  Google
+                </Button>
+                <div className="w-100 text-right mt-3">
                   <Link className="text-muted" to="/forgot-password">
                     Forgot Password?
                   </Link>
                 </div>
               </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">
+            <div className="w-100 text-muted text-right pr-4">
               Need an account?{" "}
               <Link className="text-muted" to="/register">
                 Sign Up
@@ -76,7 +87,7 @@ export default function Login() {
             </div>
           </Col>
         </Row>
-      </Container>
+      </motion.div>
     </>
   );
 }

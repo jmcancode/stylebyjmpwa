@@ -35,13 +35,13 @@ export default function CollabDetail() {
           <Col>
             <Slider {...settings}>
               <div>
-                <Image thumbnail src={layercake15} />
+                <Image load="lazy" thumbnail src={layercake15} />
               </div>
               <div>
-                <Image thumbnail src={layercake11} />
+                <Image load="lazy" thumbnail src={layercake11} />
               </div>
               <div>
-                <Image thumbnail src={layercake19} />
+                <Image load="lazy" thumbnail src={layercake19} />
               </div>
             </Slider>
           </Col>

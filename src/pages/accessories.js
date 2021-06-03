@@ -20,12 +20,11 @@ const AccPage = () => {
               width={100}
               height="100%"
               alt="Card image"
+              load="lazy"
               style={{ height: "395px", objectFit: "contain" }}
             />
             <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
-              <Card.Title className="d-flex text-uppercase">
-                Shop All
-              </Card.Title>
+              <Card.Title className="d-flex text-uppercase">Bags</Card.Title>
             </Card.ImgOverlay>
           </Card>
         </Row>
@@ -40,6 +39,7 @@ const AccPage = () => {
                 width={100}
                 height="100%"
                 alt="Card image"
+                load="lazy"
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
@@ -55,6 +55,7 @@ const AccPage = () => {
                 width="100%"
                 height="100%"
                 alt="Card image"
+                load="lazy"
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">Belts</Card.Title>
