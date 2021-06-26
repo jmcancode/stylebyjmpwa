@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 
 const FourOhFour = () => {
   return (
-    <motion.div className="container">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="container"
+    >
       <Row>
         <Col>
           <p>Oh snap, this pages isn't real!</p>
