@@ -15,6 +15,7 @@
         "start": "node server.js"
     },
     "dependencies": {
+        "@stripe/react-stripe-js": "^1.4.1",
         "@stripe/stripe-js": "^1.15.1",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.0",
