@@ -118,7 +118,7 @@ const ByRequestPage = () => {
                 href="https://stylexjm.made-to-order.com/"
                 target="__blank"
                 rel="noreferrer noopener"
-                style={{ textDecoration: "none", color: "#c60000"}}
+                style={{ textDecoration: "none", color: "#c60000" }}
               >
                 here.
               </a>
@@ -195,7 +195,7 @@ const ByRequestPage = () => {
                     <option>$500.00 - $1,000.00</option>
                   </Form.Control>
                 </Form.Group>
-                <Form.Group controlId="exampleForm.ControlSelect1">
+                <Form.Group controlId="exampleForm.ControlSelect2">
                   <Form.Label>Select a Location</Form.Label>
                   <Form.Control
                     value={location}
@@ -210,16 +210,7 @@ const ByRequestPage = () => {
                     <option>Dominion Ridge</option>
                   </Form.Control>
                 </Form.Group>
-                {/* <Datetime
-                  closeOnSelect={true}
-                  closeOnClickOutside={true}
-                  dateFormat={true}
-                  timeFormat={true}
-                  placeholder="select a date and time"
-                  value={dateTimer}
-                  onChange={(e) => setDateTimer(e.target.value)}
-                  required
-                /> */}
+
                 <Button className="mt-2" variant="dark" block type="submit">
                   {loading ? "Loading..." : "Submit"}
                 </Button>

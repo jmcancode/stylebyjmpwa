@@ -1,50 +1,48 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from "react";
 
-import CheckoutItem from "../../components/checkout-item/checkout-item.component";
-import StripeCheckoutButton from "../../components/stripe-button/stripe-button-component";
-
-import { CartContext } from "../../providers/cart/cart.provider";
-
-import "./checkout.styles.scss";
-
-const CheckoutPage = () => {
-  const { cartItems, cartTotal } = useContext(CartContext);
-
-  return (
-    <div className="checkout-page">
-      <div className="checkout-header">
-        <div className="header-block">
-          <span>Product</span>
-        </div>
-        <div className="header-block">
-          <span>Description</span>
-        </div>
-        <div className="header-block">
-          <span>Quantity</span>
-        </div>
-        <div className="header-block">
-          <span>Price</span>
-        </div>
-        <div className="header-block">
-          <span>Remove</span>
-        </div>
+const ProductDisplay = () => (
+  <section className="container">
+    <div className="product">
+      <img
+        src="https://i.imgur.com/EHyR2nP.png"
+        alt="The cover of Stubborn Attachments"
+      />
+      <div className="description">
+        <h3>Stubborn Attachments</h3>
+        <h5>$20.00</h5>
       </div>
-      {cartItems.map((cartItem) => (
-        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-      ))}
-      <div className="total">TOTAL: ${cartTotal}</div>
-      <div className="test-warning">
-        <small style={{ fontSize: "12px" }}>
-          *Please use the following test credit card for payments*
-        </small>
-        <br />
-        <small style={{ fontSize: "12px" }}>
-          4242 4242 4242 4242 - Exp: 01/28 - CVV: 404
-        </small>
-      </div>
-      <StripeCheckoutButton price={cartTotal} />
     </div>
-  );
-};
+    <form action="/create-checkout-session" method="POST">
+      <button className="btn btn-dark" type="submit">
+        Checkout
+      </button>
+    </form>
+  </section>
+);
 
-export default CheckoutPage;
+const Message = ({ message }) => (
+  <section>
+    <p>{message}</p>
+  </section>
+);
+
+export default function CheckoutPage() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+
+    if (query.get("success")) {
+      setMessage("Order placed! You will receive an email confirmation.");
+    }
+
+    if (query.get("canceled")) {
+      setMessage(
+        "Order canceled -- continue to shop around and checkout when you're ready."
+      );
+    }
+  }, []);
+
+  return message ? <Message message={message} /> : <ProductDisplay />;
+}

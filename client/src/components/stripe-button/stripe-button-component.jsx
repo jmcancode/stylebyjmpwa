@@ -1,7 +1,8 @@
-import { loadStripe } from "@stripe/stripe-js";
 import React, { useState, useEffect } from "react";
 
-const stripePromise = loadStripe("process.env.REACT_APP_STRIPE_SECRET_KEY");
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe("process.env.REACT_APP_STRIPE_PUBLIC_KEY");
 
 const ProductDisplay = ({ handleClick }) => (
   <section>
@@ -51,12 +52,9 @@ export default function StripeCheckoutButton() {
 
   const handleClick = async () => {
     const stripe = await stripePromise;
-    const response = await fetch(
-      "http://localhost:5000/create-checkout-session",
-      {
-        method: "POST",
-      }
-    );
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+    });
     const session = await response.json();
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout(

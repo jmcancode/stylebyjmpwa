@@ -1,76 +1,66 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-
-const stripeSecret = "process.env.REACT_APP_STRIPE_SECRET_KEY";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+const express = require("express");
+const cors = require("cors");
+const stripe = require("stripe")("process.env.REACT_APP_STRIPE_PUBLIC_KEY");
 const app = express();
+const path = require("path");
+const fs = require("fs");
 const port = 5000;
+const TEST_DOMAIN = "http://localhost:3000/checkout";
+const https = require("https");
+const helmet = require("helmet");
 
 app.use("/client/public/**", express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cors());
+app.use(helmet());
+
+if (process.env.NODE_ENV === "production") {
+  app.use(compression);
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+  app.use(express.static(path.join(__dirname, "client/build")));
+
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.use(function (req, res, next) {
-  // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  // Request methods you wish to allow
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  // Request headers you wish to allow
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  );
-  // Set to true if you need the website to include cookies in the requests sent
-  // to the API (e.g. in case you use sessions)
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  // Pass to next layer of middleware
-  next();
-});
-
-app.get("/", async (req, res) => {
-  res.json("Hello this is stripe setup server.");
-});
-
-app.post("/create-checkout-session", async (req, res) => {
-  const session = await stripeSecret.checkout.session.create({
-    payment_method_types: ["card"],
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
     line_items: [
       {
         price_data: {
-          currency: "inr",
+          currency: 'usd',
           product_data: {
-            name: "T-shirt",
+            name: 'Stubborn Attachments',
+            images: ['https://i.imgur.com/EHyR2nP.png'],
           },
-          unit_amount: 40000,
+          unit_amount: 2000,
         },
         quantity: 1,
       },
     ],
-    mode: "payment",
-    success_url: "http://localhost:5000/stripepaymentsuccess",
-    cancel_url: "http://localhost:5000/stripepaymentcancel",
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}?success=true`,
+    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
-  res.json({ id: session.id });
+
+  res.redirect(303, session.url)
 });
 
-app.post("/webhook", express.raw({ type: "application/json" }), (req, res) => {
-  const payload = request.body;
-
-  console.log("Got payload: " + payload);
-
-  res.status(200);
-});
-
-app.listen(port, () =>
-  console.log(`SBJM Footwear Server is connected on PORT ${port}`)
-);
+https
+  .createServer(
+    {
+      key: fs.readFileSync("key.pem"),
+      cert: fs.readFileSync("cert.pem"),
+    },
+    app
+  )
+  .listen(port, () =>
+    console.log(`SBJM Footwear Server is connected on PORT ${port}`)
+  );

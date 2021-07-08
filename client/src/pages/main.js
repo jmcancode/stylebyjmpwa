@@ -9,6 +9,7 @@ import BagImage from "../assets/bag/9382718c-9a79-4a65-be4f-7d3e1d015a7b-D.jpg";
 import FeatureImage from "../assets/madeinspain.png";
 import EssentialImage from "../assets/feature.jpg";
 import { motion } from "framer-motion";
+
 const MainPage = () => {
   return (
     <>
@@ -29,7 +30,7 @@ const MainPage = () => {
                   src={FeatureImage}
                   width={100}
                   height="100%"
-                  alt="Card image"
+                  alt="Card_image"
                   style={{
                     height: "395px",
                     objectFit: "cover",
