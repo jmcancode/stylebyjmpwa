@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import imageOne from "../assets/loafer.jpg";
 export default function ShopAllMen() {
   return (
-    <>
+    <React.Fragment>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -170,6 +170,6 @@ export default function ShopAllMen() {
           </Col>
         </Row>
       </motion.div>
-    </>
+    </React.Fragment>
   );
 }

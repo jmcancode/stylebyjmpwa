@@ -1,20 +1,34 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import CurrentUserContext from "../../context/currentUser/current-user.context";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Loader from "../../components/layout/Spinner";
 
-export default function PrivateRoute({ component: Component, ...rest }) {
-  const currentUser = useContext(CurrentUserContext);
+const PrivateRoute = ({
+  component: Component,
+  auth: { isAuthenticated, loading },
+  ...rest
+}) => (
+  <Route
+    {...rest}
+    render={(props) =>
+      loading ? (
+        <Loader />
+      ) : isAuthenticated ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="/" />
+      )
+    }
+  />
+);
 
-  return (
-    <Route
-      {...rest}
-      render={(props) => {
-        return currentUser ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to="/signIn" />
-        );
-      }}
-    ></Route>
-  );
-}
+PrivateRoute.propTypes = {
+  auth: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(PrivateRoute);

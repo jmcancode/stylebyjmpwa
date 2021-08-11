@@ -1,18 +1,12 @@
-import React, { useRef, useState } from "react";
-import { Form, Button, Card, Alert, Col, Row } from "react-bootstrap";
-// import { useAuth } from "../../firebase/context";
+import React from "react";
+import { Form, Button, Card,  Col, Row } from "react-bootstrap";
+
 
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
 export default function Login() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  // const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -30,19 +24,19 @@ export default function Login() {
             <Card style={{ borderColor: "transparent" }}>
               <Card.Body>
                 <h2 className="text-center mb-4">Welcome back</h2>
-                {error && <Alert variant="danger">{error}</Alert>}
+             
                 <Form onSubmit={handleSubmit}>
                   <Form.Group id="email">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" ref={emailRef} required />
+                    <Form.Control type="email"  required />
                   </Form.Group>
                   <Form.Group id="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" ref={passwordRef} required />
+                    <Form.Control type="password" required />
                   </Form.Group>
                   <Button
                     variant="danger"
-                    disabled={loading}
+                    
                     className="w-100"
                     type="submit"
                   >

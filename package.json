@@ -43,9 +43,12 @@
         "nodemon": "^2.0.7",
         "passport": "^0.4.1",
         "passport-jwt": "^4.0.0",
+        "redux": "^4.1.1",
+        "redux-devtools-extension": "^2.13.9",
         "requirejs": "^2.3.6",
         "serverless-http": "^2.7.0",
         "stripe": "6.28.0",
+        "thunk": "^0.0.1",
         "validator": "^13.6.0",
         "web-push": "^3.4.4"
     }

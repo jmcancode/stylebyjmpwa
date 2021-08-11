@@ -5,7 +5,7 @@ import "./foooter.css";
 import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 
-export default function FooterComponent() {
+const  FooterComponent = () => {
   const [email, setEmail] = useState("");
   return (
     <React.Fragment>
@@ -144,3 +144,5 @@ export default function FooterComponent() {
     </React.Fragment>
   );
 }
+
+export default FooterComponent;

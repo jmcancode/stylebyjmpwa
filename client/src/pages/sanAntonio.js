@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function MadeInSanAntonio() {
   return (
-    <>
+    <React.Fragment>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -72,6 +72,6 @@ export default function MadeInSanAntonio() {
           </Col>
         </Row>
       </motion.div>
-    </>
+    </React.Fragment>
   );
 }
