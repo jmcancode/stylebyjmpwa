@@ -9,7 +9,7 @@ import {
 import { Link } from "react-router-dom";
 // import { FaShoppingBag } from "react-icons/fa";
 import logo from "../../assets/jmlogo.png";
-import { auth } from "../../firebase/firebase.utils";
+
 import { CartContext } from "../../providers/cart/cart.provider";
 import CurrentUserContext from "../../context/currentUser/current-user.context";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
@@ -61,7 +61,7 @@ const TopNavBar = () => {
             </Nav.Link>
           </Nav>
           <Nav className="ml-auto">
-            {currentUser ? (
+            {/* {currentUser ? (
               <div
                 className="pt-2"
                 style={{
@@ -77,7 +77,7 @@ const TopNavBar = () => {
               <Link className="pt-2" style={{ color: "#1f1f1f" }} to="/signin">
                 <RiAccountCircleLine  size={25}/>
               </Link>
-            )}
+            )} */}
             {/* <Nav.Link as={Link} to="/checkout">
               
             </Nav.Link> */}

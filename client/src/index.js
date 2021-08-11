@@ -13,15 +13,9 @@ import { BrowserRouter } from "react-router-dom";
 import { store, persistor } from "./redux/store";
 
 ReactDOM.render(
-  <CartProvider>
-    <Provider store={store}>
-      <BrowserRouter>
-        <PersistGate persistor={persistor}>
-          <App />
-        </PersistGate>
-      </BrowserRouter>
-    </Provider>
-  </CartProvider>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

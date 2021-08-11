@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const MainPage = () => {
   return (
-    <>
+    <React.Fragment>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ const MainPage = () => {
           </Row>
         </Col>
       </motion.div>
-    </>
+    </React.Fragment>
   );
 };
 

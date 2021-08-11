@@ -8,7 +8,7 @@ import "react-datetime/css/react-datetime.css";
 import { motion } from "framer-motion";
 import { BiCalendar } from "react-icons/bi";
 import bgImage from "../assets/PH4_5258.jpg";
-import { db } from "../firebase/config";
+// import { db } from "../firebase/config";
 
 const ByRequestPage = () => {
   const [show, setShow] = useState(false);
@@ -23,35 +23,10 @@ const ByRequestPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(false);
-
-    db.collection("byRequestApps")
-      .add({
-        fullName: fullName,
-        email: email,
-        tel: tel,
-        budget: budget,
-        location: location,
-      })
-      .then(() => {
-        setLoading(false);
-        alert(
-          "Successful request, a member of our team will contact you within 48 hours to schedule a time and date."
-        );
-      })
-      .catch((err) => {
-        alert(err.message);
-        setLoading(false);
-      });
-    setFullName("");
-    setEmail("");
-    setBudget("");
-    setLocation("");
-    setTel("");
   };
 
   return (
-    <>
+    <React.Fragment>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -207,8 +182,12 @@ const ByRequestPage = () => {
                     <option>Choose one...</option>
                     <option>In-Home</option>
                     <option>In-Office</option>
-                    <option>Geekdom: 110 E Houston St Fl 07 San Antonio Tx</option>
-                    <option>Dominion Ridge: 22211 IH-10 W Ste 1206 San Antonio Tx</option>
+                    <option>
+                      Geekdom: 110 E Houston St Fl 07 San Antonio Tx
+                    </option>
+                    <option>
+                      Dominion Ridge: 22211 IH-10 W Ste 1206 San Antonio Tx
+                    </option>
                   </Form.Control>
                 </Form.Group>
 
@@ -249,7 +228,7 @@ const ByRequestPage = () => {
           </Col>
         </Row>
       </motion.div>
-    </>
+    </React.Fragment>
   );
 };
 

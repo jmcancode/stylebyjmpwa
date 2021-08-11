@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import bgImage from "../assets/view-drone-historic-center-spanish-city-almansa-overlooking-ancient-fortified-castle-bell-tower-roman-catholic-church-201208270.jpg";
 const AboutUsPage = () => {
   return (
-    <>
+    <React.Fragment>
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ const AboutUsPage = () => {
           </Col>
         </Row>
       </motion.div>
-    </>
+    </React.Fragment>
   );
 };
 

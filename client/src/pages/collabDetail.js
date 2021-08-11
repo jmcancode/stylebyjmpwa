@@ -30,7 +30,7 @@ export default function CollabDetail() {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Container className="p-3 pb-5">
         <Row>
           <Col>
@@ -170,6 +170,6 @@ export default function CollabDetail() {
           </Col>
         </Row>
       </Container>
-    </>
+    </React.Fragment>
   );
 }

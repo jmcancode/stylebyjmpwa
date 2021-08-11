@@ -3,7 +3,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 
 export default function StockistLocation() {
   return (
-    <>
+    <React.Fragment>
       <Container fluid>
         <Row xs={1} md={2} lg={2}>
           {/* <Col>
@@ -50,6 +50,6 @@ export default function StockistLocation() {
           </Col>
         </Row>
       </Container>
-    </>
+    </React.Fragment>
   );
 }

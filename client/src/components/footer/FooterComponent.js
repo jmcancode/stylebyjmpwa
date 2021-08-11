@@ -1,34 +1,14 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, InputGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { db } from "../../firebase/config";
 import "./foooter.css";
 import { motion } from "framer-motion";
-
 import { SocialIcon } from "react-social-icons";
 
-const FooterComponent = () => {
+export default function FooterComponent() {
   const [email, setEmail] = useState("");
-  const [loader, setLoader] = useState();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoader(true);
-    db.collection("newsletter")
-      .add({ email: email })
-      .then(() => {
-        setLoader(false);
-        alert("Welcome to the club! We promise not to spam you.");
-      })
-      .catch((error) => {
-        alert(error.message);
-        setLoader(false);
-      });
-    setEmail("");
-  };
-
   return (
-    <>
+    <React.Fragment>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -50,7 +30,7 @@ const FooterComponent = () => {
             </Form>
           </Col>
           <Col>
-            <Form.Row onSubmit={handleSubmit}>
+            <Form.Row>
               <Col>
                 <Form.Label className="pl-1 pt-3">Email Address</Form.Label>
                 <InputGroup>
@@ -69,7 +49,7 @@ const FooterComponent = () => {
                     <Button
                       type="submit"
                       style={{
-                        backgroundColor: loader ? "rgba(2,2,0)" : "transparent",
+                        backgroundColor: "#1f1f1f",
                         borderColor: "transparent",
                         color: "#1f1f1f",
                       }}
@@ -161,8 +141,6 @@ const FooterComponent = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </React.Fragment>
   );
-};
-
-export default FooterComponent;
+}

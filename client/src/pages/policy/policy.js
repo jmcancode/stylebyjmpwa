@@ -3,7 +3,7 @@ import { Accordion, Col, Container, Row } from "react-bootstrap";
 
 export default function PolicyPage() {
   return (
-    <>
+    <React.Fragment>
       <Container>
         <Row>
           <Col>
@@ -11,6 +11,6 @@ export default function PolicyPage() {
           </Col>
         </Row>
       </Container>
-    </>
+    </React.Fragment>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, CardDeck, Card, Button } from "react-bootstrap";
+import { Row, Col, CardGroup, Card, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import imageOne from "../assets/loafer.jpg";
 export default function ShopAllMen() {
@@ -12,7 +12,7 @@ export default function ShopAllMen() {
       >
         <Row xs={1} md={1} lg={1}>
           <Col>
-            <CardDeck>
+            <CardGroup>
               <Card style={{ borderColor: "transparent" }} border="light">
                 <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
@@ -83,12 +83,12 @@ export default function ShopAllMen() {
                   </Button>
                 </Card.Footer>
               </Card>
-            </CardDeck>
+            </CardGroup>
           </Col>
         </Row>
         <Row className="mt-3" xs={1} md={1} lg={1}>
           <Col>
-            <CardDeck>
+            <CardGroup>
               <Card border="light">
                 <Card.Img load="lazy" variant="top" src={imageOne} />
                 <Card.Body>
@@ -161,7 +161,7 @@ export default function ShopAllMen() {
                   </Button>
                 </Card.Footer>
               </Card>
-            </CardDeck>
+            </CardGroup>
           </Col>
         </Row>
         <Row>

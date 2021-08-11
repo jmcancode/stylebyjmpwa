@@ -1,10 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { AuthProvider } from "./firebase/context";
-
+// components
 import TopNavBar from "./components/navbar/navbar";
-
+// pages
 import MainPage from "./pages/main";
 import FourOhFour from "./pages/errorpage";
 import MensPage from "./pages/menspage";
@@ -31,7 +30,7 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 
 function App() {
   return (
-    <AuthProvider>
+    <Fragment>
       <Router>
         <div className="App">
           <TopNavBar />
@@ -61,7 +60,7 @@ function App() {
           <FooterComponent />
         </div>
       </Router>
-    </AuthProvider>
+    </Fragment>
   );
 }
 

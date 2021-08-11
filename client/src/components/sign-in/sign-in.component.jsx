@@ -3,7 +3,6 @@ import { Form } from "react-bootstrap";
 import FormInput from "../form-input/form-input.component";
 // import CustomButton from "../custom-button/custom-button.component";
 import { motion } from "framer-motion";
-import { auth } from "../../firebase/firebase.utils";
 
 import "./sign-in.styles.scss";
 
@@ -19,21 +18,6 @@ class SignIn extends React.Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-
-    const { email, password } = this.state;
-
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ email: "", password: "" });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  handleChange = (event) => {
-    const { value, name } = event.target;
-
-    this.setState({ [name]: value });
   };
 
   render() {
@@ -46,7 +30,7 @@ class SignIn extends React.Component {
           <FormInput
             name="email"
             type="email"
-            handleChange={this.handleChange}
+            // handleChange={this.handleChange}
             value={this.state.email}
             label="email"
             required
@@ -55,7 +39,7 @@ class SignIn extends React.Component {
             name="password"
             type="password"
             value={this.state.password}
-            handleChange={this.handleChange}
+            // handleChange={this.handleChange}
             label="password"
             required
           />
