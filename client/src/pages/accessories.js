@@ -43,7 +43,7 @@ const AccPage = () => {
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase">
-                  Shoe Inserts
+                  Shoe Care
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>

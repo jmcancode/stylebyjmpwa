@@ -96,7 +96,7 @@ const MensPage = () => {
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="d-flex text-uppercase text-black">
-                  Slip-on
+                  Lounge
                 </Card.Title>
               </Card.ImgOverlay>
             </Card>

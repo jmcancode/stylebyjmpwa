@@ -193,6 +193,7 @@ const ByRequestPage = () => {
                     <option>Choose one...</option>
                     <option>$250.00 - $500.00</option>
                     <option>$500.00 - $1,000.00</option>
+                    <option>$1,000.00 +</option>
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect2">
@@ -206,8 +207,8 @@ const ByRequestPage = () => {
                     <option>Choose one...</option>
                     <option>In-Home</option>
                     <option>In-Office</option>
-                    <option>Geekdom</option>
-                    <option>Dominion Ridge</option>
+                    <option>Geekdom: 110 E Houston St Fl 07 San Antonio Tx</option>
+                    <option>Dominion Ridge: 22211 IH-10 W Ste 1206 San Antonio Tx</option>
                   </Form.Control>
                 </Form.Group>
 

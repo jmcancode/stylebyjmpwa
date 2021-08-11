@@ -14,7 +14,7 @@ import { CartContext } from "../../providers/cart/cart.provider";
 import CurrentUserContext from "../../context/currentUser/current-user.context";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
-
+import { RiAccountCircleLine } from "react-icons/ri";
 import "../../App.css";
 
 const TopNavBar = () => {
@@ -75,7 +75,7 @@ const TopNavBar = () => {
               </div>
             ) : (
               <Link className="pt-2" style={{ color: "#1f1f1f" }} to="/signin">
-                Sign-in
+                <RiAccountCircleLine  size={25}/>
               </Link>
             )}
             {/* <Nav.Link as={Link} to="/checkout">

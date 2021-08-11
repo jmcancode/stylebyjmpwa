@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe("process.env.REACT_APP_STRIPE_PUBLIC_KEY");
@@ -52,7 +52,7 @@ export default function StripeCheckoutButton() {
 
   const handleClick = async () => {
     const stripe = await stripePromise;
-    const response = await fetch("/create-checkout-session", {
+    const response = await axios.post("/create-checkout-session", {
       method: "POST",
     });
     const session = await response.json();

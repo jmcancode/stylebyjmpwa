@@ -20,7 +20,6 @@ import layercake19 from "../assets/RyanHunter/layercakexjm-19.JPG";
 import { FaStar } from "react-icons/fa";
 
 export default function CollabDetail() {
-  // const { addItem } = useContext(CartContext);
   const settings = {
     dots: true,
     infinite: true,
@@ -67,9 +66,12 @@ export default function CollabDetail() {
             <span className="fw-bold pl-2">Green</span>
           </Col>
           <Col className="text-right">
-            <a href="/" style={{ color: "red" }}>
+            <small
+              onClick={() => alert("Que size guide")}
+              style={{ color: "red" }}
+            >
               View size guide
-            </a>
+            </small>
           </Col>
         </Row>
         <Row xs={1} md={1} lg={1}>
@@ -94,7 +96,7 @@ export default function CollabDetail() {
               style={{ backgroundColor: "#1f1f1f", borderColor: "transparent" }}
               className="p-2"
               block
-              // onClick={() => addItem(item)}
+              onClick={() => alert("Item added to cart")}
             >
               Add to bag
             </Button>
@@ -128,6 +130,9 @@ export default function CollabDetail() {
                       <br />
                       This collection is limited to 10 units and will only be
                       made in this colour-way once.
+                      <br />
+                      <br />
+                      Made in Spain
                     </p>
                   </Card.Body>
                 </Accordion.Collapse>

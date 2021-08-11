@@ -101,7 +101,7 @@ const CollabPage = () => {
               />
               <Card.ImgOverlay className="d-flex justify-content-start align-items-end">
                 <Card.Title className="text-left text-uppercase">
-                  <h5>Exchange LA</h5>
+                  <h5>RBP Chelsea</h5>
                   <Button
                     as={Link}
                     to="/collabdetail"

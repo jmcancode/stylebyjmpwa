@@ -60,7 +60,12 @@ class SignIn extends React.Component {
             required
           />
           <div className="buttons">
-            <button>Login</button>
+            <button
+              onClick={() => alert("You are logged in")}
+              className="btn btn-dark"
+            >
+              Login
+            </button>
           </div>
         </Form>
       </motion.div>
