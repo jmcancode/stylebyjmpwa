@@ -1,0 +1,15 @@
+/* My account tab styles */
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #c60000 !important;
+}
+
+.nav-pills .nav-link {
+    background: 0 0;
+    color: #171717;
+    border: 0;
+    border-radius: .25rem;
+}
+
+
+/* second page starts here... */

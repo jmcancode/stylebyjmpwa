@@ -106,15 +106,16 @@ const TopNavBar = ({ auth: { isAuthenticated }, logout }) => {
         </Nav>
         <Nav className="ml-auto pt-3">
           <Nav.Link style={{ paddingRight: "2px" }}>
-            <FaShoppingBag />
+            <p>
+              {" "}
+              <FaShoppingBag size={18} />
+            </p>
           </Nav.Link>
           <Nav.Link as={Link} to="/myaccount" href="signup">
-            <FaRegUser />
+            <FaRegUser size={18} />
           </Nav.Link>
           <Nav.Link onClick={logout}>
-            <p>
-              <HiLogout />
-            </p>
+            <p>Logout</p>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
