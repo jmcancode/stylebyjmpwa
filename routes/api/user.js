@@ -7,8 +7,11 @@ const config = require("config");
 const { check, validationResult } = require("express-validator");
 const normalize = require("normalize-url");
 
-const User = require("../../modles/User")();
+const User = require("../../models/User");
 
+// @route    POST api/users
+// @desc     Register user
+// @access   Public
 router.post(
   "/",
   check("name", "Name is required").notEmpty(),
@@ -65,7 +68,7 @@ router.post(
       jwt.sign(
         payload,
         config.get("jwtSecret"),
-        { expiresIn: "2d" },
+        { expiresIn: "5 days" },
         (err, token) => {
           if (err) throw err;
           res.json({ token });

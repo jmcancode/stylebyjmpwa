@@ -25,6 +25,7 @@ const Login = ({ isAuthenticated, login }) => {
   if (isAuthenticated) {
     return <Redirect to="/" />;
   }
+
   return (
     <Fragment>
       <div className="container">
@@ -56,6 +57,9 @@ const Login = ({ isAuthenticated, login }) => {
                   <Form.Control
                     type="password"
                     placeholder="password"
+                    onChange={onChange}
+                    value={password}
+                    name="password"
                     style={{
                       borderBottomLeftRadius: "0px",
                       borderBottomRightRadius: "0px",
@@ -66,7 +70,9 @@ const Login = ({ isAuthenticated, login }) => {
                   />
                 </Form.Group>
                 <div className="d-grid gap-2 pt-2">
-                  <Button variant="danger">Login</Button>
+                  <Button variant="danger" type="submit">
+                    Login
+                  </Button>
                 </div>
               </Form>
               <small className="text-end pt-2">
@@ -88,7 +94,7 @@ const Login = ({ isAuthenticated, login }) => {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({

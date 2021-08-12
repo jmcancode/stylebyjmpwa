@@ -8,6 +8,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingBag, FaRegUser } from "react-icons/fa";
+import { HiLogout } from "react-icons/hi";
 import logo from "../../assets/jmlogo.png";
 import PropTypes from "prop-types";
 import { logout } from "../../redux/actions/auth";
@@ -74,7 +75,7 @@ const TopNavBar = ({ auth: { isAuthenticated }, logout }) => {
       </NavbarBrand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="ml-auto" style={{ fontSize: "5px" }}>
+        <Nav className="mx-auto">
           <Nav.Link as={Link} to="/mens" href="#mens">
             Men
           </Nav.Link>
@@ -99,16 +100,21 @@ const TopNavBar = ({ auth: { isAuthenticated }, logout }) => {
               Designed in San Antonio
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link as={Link} to="/jmsjouranl" href="#jmsjouranl">
+          <Nav.Link as={Link} to="/jmsjournal" href="#jmsjouranl">
             Journal
           </Nav.Link>
         </Nav>
-        <Nav>
+        <Nav className="ml-auto pt-3">
           <Nav.Link style={{ paddingRight: "2px" }}>
             <FaShoppingBag />
           </Nav.Link>
+          <Nav.Link as={Link} to="/myaccount" href="signup">
+            <FaRegUser />
+          </Nav.Link>
           <Nav.Link onClick={logout}>
-            <p>Logout</p>
+            <p>
+              <HiLogout />
+            </p>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

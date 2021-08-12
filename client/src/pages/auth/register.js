@@ -111,7 +111,7 @@ const SignUp = ({ isAuthenticated, setAlert, register }) => {
                 </Form.Group>
                 <div className="d-grid gap-2 pt-2">
                   <Button variant="danger" type="submit" value="SignUp">
-                    Login
+                    Sign-up
                   </Button>
                 </div>
               </Form>
