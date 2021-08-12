@@ -12,3 +12,7 @@ Link {
   color: red;
 }
 
+a.nav-link {
+  font-size: 16px !important;
+}
+

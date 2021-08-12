@@ -8,9 +8,11 @@ const app = express();
 connectDB();
 
 // init middleware
-express.json();
+app.use(express.json());
 
 // define routes
+app.use("/api/users", require("./routes/api/user"));
+app.use("/api/auth", require("./routes/api/auth"));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
@@ -22,6 +24,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const PORT = 5000;
+const PORT = 8000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

@@ -10,8 +10,6 @@ import {
   Image,
 } from "react-bootstrap";
 import Slider from "react-slick";
-// import { Link } from "react-router-dom";
-// import CartContext from "../providers/cart/cart.provider";
 
 import layercake11 from "../assets/RyanHunter/layercakexjm-11.JPG";
 import layercake15 from "../assets/RyanHunter/layercakexjm-15.JPG";
@@ -19,7 +17,7 @@ import layercake19 from "../assets/RyanHunter/layercakexjm-19.JPG";
 
 import { FaStar } from "react-icons/fa";
 
-export default function CollabDetail() {
+const CollabDetail = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -172,4 +170,5 @@ export default function CollabDetail() {
       </Container>
     </React.Fragment>
   );
-}
+};
+export default CollabDetail;

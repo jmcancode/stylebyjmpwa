@@ -7,7 +7,7 @@ import {
   Container,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaShoppingBag } from "react-icons/fa";
+import { FaShoppingBag, FaRegUser } from "react-icons/fa";
 import logo from "../../assets/jmlogo.png";
 import PropTypes from "prop-types";
 import { logout } from "../../redux/actions/auth";
@@ -51,16 +51,22 @@ const TopNavBar = ({ auth: { isAuthenticated }, logout }) => {
               Designed in San Antonio
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link as={Link} to="/jmsjouranl" href="#jmsjouranl">
+          <Nav.Link as={Link} to="/jmsjournal" href="!#">
             Journal
           </Nav.Link>
         </Nav>
         <Nav className="ml-auto">
-          <FaShoppingBag />
+          <Nav.Link>
+            <FaShoppingBag />
+          </Nav.Link>
+          <Nav.Link as={Link} to="/signup" href="signup">
+            <FaRegUser />
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
+
   const authLinks = (
     <Navbar collapseOnSelect expand="lg" bg="transparent" variant="light">
       <NavbarBrand as={Link} to="/">
@@ -68,10 +74,7 @@ const TopNavBar = ({ auth: { isAuthenticated }, logout }) => {
       </NavbarBrand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav
-          className="mx-auto"
-          style={{ fontWeight: "bold", fontSize: "18px" }}
-        >
+        <Nav className="ml-auto" style={{ fontSize: "5px" }}>
           <Nav.Link as={Link} to="/mens" href="#mens">
             Men
           </Nav.Link>
@@ -100,8 +103,13 @@ const TopNavBar = ({ auth: { isAuthenticated }, logout }) => {
             Journal
           </Nav.Link>
         </Nav>
-        <Nav className="ml-auto">
-          <FaShoppingBag />
+        <Nav>
+          <Nav.Link style={{ paddingRight: "2px" }}>
+            <FaShoppingBag />
+          </Nav.Link>
+          <Nav.Link onClick={logout}>
+            <p>Logout</p>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

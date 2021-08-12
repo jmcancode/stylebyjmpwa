@@ -20,29 +20,33 @@ import ShopAllMen from "../../pages/shopallmen";
 import CustomMade from "../../pages/custom";
 import PolicyPage from "../../pages/policy/policy";
 import MadeInSanAntonio from "../../pages/sanAntonio";
-import JMsJouranl from "../../pages/jmsjournal";
+import JMsJournal from "../../pages/jmsjournal";
+
+import SignUp from "../../pages/auth/register";
+import Login from "../../pages/auth/login";
 
 const Routes = (props) => {
   return (
     <div>
       <Switch>
-        <Route path="/mens" component={MensPage} />
-        <Route path="/shopallmens" component={ShopAllMen} />
-        <Route path="/bags" component={BagPage} />
-        <Route path="/accessories" component={AccPage} />
-        <Route path="/shoecare" component={ShoeCare} />
-        <Route path="/collabs" component={CollabPage} />
-        <Route path="/collabdetail" component={CollabDetail} />
-        <Route path="/byrequest" component={ByRequestPage} />
-        <Route path="/custom" component={CustomMade} />
-        <Route path="/madeinspain" component={AboutUsPage} />
-        <Route path="/designedinsa" component={MadeInSanAntonio} />
-        <Route path="/jmsjournal" component={JMsJouranl} />
-
-        <Route path="/stockist" component={StockistLocation} />
-        <Route path="/policy" component={PolicyPage} />
-        <PrivateRoute path="/myaccount" component={UserAccount} />
-        <Route component={FourOhFour} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/mens" component={MensPage} />
+        <Route exact path="/shopallmens" component={ShopAllMen} />
+        <Route exact path="/bags" component={BagPage} />
+        <Route exact path="/accessories" component={AccPage} />
+        <Route exact path="/shoecare" component={ShoeCare} />
+        <Route exact path="/collabs" component={CollabPage} />
+        <Route exact path="/collabdetail" component={CollabDetail} />
+        <Route exact path="/byrequest" component={ByRequestPage} />
+        <Route exact path="/custom" component={CustomMade} />
+        <Route exact path="/madeinspain" component={AboutUsPage} />
+        <Route exact path="/designedinsa" component={MadeInSanAntonio} />
+        <Route exact path="/jmsjournal" component={JMsJournal} />
+        <Route exact path="/stockist" component={StockistLocation} />
+        <Route exact path="/policy" component={PolicyPage} />
+        <PrivateRoute exact path="/myaccount" component={UserAccount} />
+        <Route exact component={FourOhFour} />
       </Switch>
     </div>
   );
