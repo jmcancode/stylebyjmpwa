@@ -24,6 +24,8 @@ import JMsJournal from "../../pages/jmsjournal";
 
 import SignUp from "../../pages/auth/register";
 import Login from "../../pages/auth/login";
+import AdminPanel from "../../pages/admin/adminPanel";
+import JournalDetail from "../../pages/journalDetail";
 
 const Routes = (props) => {
   return (
@@ -43,9 +45,11 @@ const Routes = (props) => {
         <Route exact path="/madeinspain" component={AboutUsPage} />
         <Route exact path="/designedinsa" component={MadeInSanAntonio} />
         <Route exact path="/jmsjournal" component={JMsJournal} />
+        <Route exact path="/jmsjournal/:id" component={JournalDetail} />
         <Route exact path="/stockist" component={StockistLocation} />
         <Route exact path="/policy" component={PolicyPage} />
         <PrivateRoute exact path="/myaccount" component={UserAccount} />
+        <PrivateRoute exact path="/admin-panel" component={AdminPanel} />
         <Route exact component={FourOhFour} />
       </Switch>
     </div>

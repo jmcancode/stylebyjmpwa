@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import blogImage from "../assets/Images/IMG_0765.JPG";
 
-const JMsJournal = () => {
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getJournals } from "../redux/actions/journal";
+import formatDate from "../redux/utils/formatDate";
+
+const JMsJournal = ({ getJournals, journal: { journals } }) => {
+  useEffect(() => {
+    getJournals();
+  }, [getJournals]);
+
   return (
     <React.Fragment>
       <Container>
@@ -13,19 +23,29 @@ const JMsJournal = () => {
             </Form>
           </Col>
           <Col>
-            <Card style={{ borderColor: "transparent " }}>
-              <Card.Img variant="top" src={blogImage} />
-              <Card.Body>
-                <Card.Title>Style & Substance: Chelsea Boots</Card.Title>
-                <Card.Text>
-                  The English style boot thats both casual and somewhat formal.
-                  The Chelsea boot first ...
-                </Card.Text>
-                <div className="d-grid gap-2">
-                  <Button variant="danger">Read More</Button>
-                </div>
-              </Card.Body>
-            </Card>
+            {journals.map((journal) => (
+              <Card key={journal._id} style={{ borderColor: "transparent " }}>
+                <Card.Img variant="top" src={journal.image} />
+                <Card.Body>
+                  <Card.Title>Style & Substance: {journal.title}</Card.Title>
+                  <Card.Text>{journal.body}</Card.Text>
+                  <div className="d-grid gap-2">
+                    <Button
+                      as={Link}
+                      // to={`/jmsjournal/${_id}`}
+                      variant="danger"
+                    >
+                      Read More
+                    </Button>
+                  </div>
+                </Card.Body>
+                <Card.Footer style={{ backgroundColor: "transparent" }}>
+                  <small className="text-muted text-end">
+                    Posted on: {formatDate(journal.date)}{" "}
+                  </small>
+                </Card.Footer>
+              </Card>
+            ))}
           </Col>
         </Row>
       </Container>
@@ -33,4 +53,13 @@ const JMsJournal = () => {
   );
 };
 
-export default JMsJournal;
+JMsJournal.propTypes = {
+  journal: PropTypes.object.isRequired,
+  getJournals: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  journal: state.journal,
+});
+
+export default connect(mapStateToProps, { getJournals })(JMsJournal);

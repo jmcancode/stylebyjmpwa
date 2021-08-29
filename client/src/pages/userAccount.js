@@ -1,7 +1,8 @@
 import React from "react";
-import { Row, Col, Card, Nav, Tab } from "react-bootstrap";
+import { Row, Col, Card, Nav, Tab, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./pages.css";
+import { Link } from "react-router-dom";
 
 const userAccount = () => {
   return (
@@ -142,6 +143,13 @@ const userAccount = () => {
               </Row>
             </Tab.Container>
           </Card>
+        </Col>
+      </Row>
+      <Row className="p-4">
+        <Col className="text-end">
+          <Button variant="dark" as={Link} to="/admin-panel">
+            Founders
+          </Button>
         </Col>
       </Row>
     </motion.div>

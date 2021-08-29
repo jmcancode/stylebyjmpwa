@@ -24,7 +24,6 @@ const CollabPage = () => {
             border="light"
             style={{
               color: "#1f1f1f",
-
               borderColor: "transparent",
             }}
           >

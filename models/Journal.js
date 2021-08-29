@@ -15,9 +15,6 @@ const JournalSchema = new mongoose.Schema(
       type: Date,
       default: Date.now(),
     },
-    author: {
-      String,
-    },
     meta: {
       votes: Number,
       favs: Number,
