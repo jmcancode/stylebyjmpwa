@@ -16,7 +16,7 @@ const JMsJournal = () => {
             <Card style={{ borderColor: "transparent " }}>
               <Card.Img variant="top" src={blogImage} />
               <Card.Body>
-                <Card.Title>Chelsea Boots</Card.Title>
+                <Card.Title>Style & Substance: Chelsea Boots</Card.Title>
                 <Card.Text>
                   The English style boot thats both casual and somewhat formal.
                   The Chelsea boot first ...

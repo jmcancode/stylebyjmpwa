@@ -19,6 +19,7 @@ const CollabPage = () => {
         <Col>
           <motion.div
             className="card"
+            as={Link}
             to="/collabdetail"
             border="light"
             style={{
