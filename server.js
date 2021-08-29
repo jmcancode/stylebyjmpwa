@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const connectDB = require("./config/db");
-
+const helmet = require("helmet");
 const app = express();
 
 // connect mongodb
@@ -9,7 +9,7 @@ connectDB();
 
 // init middleware
 app.use(express.json());
-
+app.use(helmet());
 // define routes
 app.use("/api/users", require("./routes/api/user"));
 app.use("/api/auth", require("./routes/api/auth"));

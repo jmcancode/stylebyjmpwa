@@ -26,6 +26,19 @@ const UserSchema = new mongoose.Schema({
     enum: ["user", "admin", "super"],
     default: "user",
   },
+  billingAddress: {
+    type: String,
+  },
+  shippingAddress: {
+    type: String,
+  },
+  newsletter: {
+    type: Boolean,
+  },
+  favs: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "favs"
+  },
 });
 
 module.exports = mongoose.model("user", UserSchema);

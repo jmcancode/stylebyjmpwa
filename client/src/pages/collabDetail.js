@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {
   Container,
   Col,
@@ -28,7 +28,7 @@ const CollabDetail = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Container className="p-3 pb-5">
         <Row>
           <Col>
@@ -168,7 +168,8 @@ const CollabDetail = () => {
           </Col>
         </Row>
       </Container>
-    </React.Fragment>
+    </Fragment>
   );
 };
+
 export default CollabDetail;

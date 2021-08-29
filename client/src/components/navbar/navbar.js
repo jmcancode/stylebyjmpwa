@@ -8,7 +8,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingBag, FaRegUser } from "react-icons/fa";
-import { HiLogout } from "react-icons/hi";
+
 import logo from "../../assets/jmlogo.png";
 import PropTypes from "prop-types";
 import { logout } from "../../redux/actions/auth";
