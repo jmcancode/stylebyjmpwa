@@ -7,7 +7,7 @@ const {
   getAllJournals,
 } = require("../../controllers/journalControllers");
 
-router.post("/", createJournals);
+router.post("/", uploadMulter, createJournals);
 
 router.get("/", getAllJournals);
 

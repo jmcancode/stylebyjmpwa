@@ -4,16 +4,14 @@ const connectDB = require("./config/db");
 const helmet = require("helmet");
 const app = express();
 
-
 // connect mongodb
 connectDB();
 
-
-
 // init middleware
 app.use(express.json());
-app.use(express.static("/upload"));
+// app.use(express.static("/upload"));
 app.use(helmet());
+
 // define routes
 app.use("/api/users", require("./routes/api/user"));
 app.use("/api/auth", require("./routes/api/auth"));
@@ -29,6 +27,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const PORT = 8001;
+const PORT = 8000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
