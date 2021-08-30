@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-// upload middleware here...
+const uploadMulter = require("../../middleware/upload");
 
 const {
   createJournals,
