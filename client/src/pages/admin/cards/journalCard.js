@@ -10,11 +10,9 @@ const JournalCard = ({ addJournal }) => {
     title: "",
     body: "",
     image: "",
-    date: "",
-    author: "",
   });
 
-  const { title, body, image, date, author } = formData;
+  const { title, body, image } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,7 +33,7 @@ const JournalCard = ({ addJournal }) => {
           <Card.Body>
             <Row>
               <Col>
-                <form onSubmit={onSubmit}>
+                <Form onSubmit={onSubmit} onEncrypted="multipart/form-data">
                   <Form.Group className="mb-2">
                     <Form.Control
                       type="file"
@@ -55,16 +53,6 @@ const JournalCard = ({ addJournal }) => {
                       required
                     />
                   </Form.Group>
-                  {/* <Form.Group className="mb-2">
-                    <Form.Control
-                      type="text"
-                      placeholder="Authors Name"
-                      value={author}
-                      name="author"
-                      onChange={onChange}
-                      required
-                    />
-                  </Form.Group> */}
                   <Form.Group className="mb-2">
                     <Form.Control
                       as="textarea"
@@ -82,7 +70,7 @@ const JournalCard = ({ addJournal }) => {
                       Submit
                     </Button>
                   </div>
-                </form>
+                </Form>
               </Col>
             </Row>
           </Card.Body>

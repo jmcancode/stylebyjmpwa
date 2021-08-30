@@ -7,7 +7,7 @@ import {
   ERROR_JOURNAL,
   //   DELETE_JOURNAL,
 } from "../actions/types";
-import {setAlert} from "./alert";
+import { setAlert } from "./alert";
 
 // get journals
 export const getJournals = () => async (dispatch) => {
