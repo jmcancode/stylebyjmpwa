@@ -37,7 +37,10 @@ const UserSchema = new mongoose.Schema({
   },
   favs: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "favs"
+    ref: "favs",
+  },
+  accessToken: {
+    type: String,
   },
 });
 
