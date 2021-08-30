@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Row, Col, Table } from "react-bootstrap";
+import ProfitChart from "../../components/charts/profitsChart";
 import AppCard from "./cards/appointmentCard";
 import JournalCard from "./cards/journalCard";
 import ProductsCard from "./cards/productsCard";
@@ -33,7 +34,7 @@ export default function AdminPanel() {
         <hr />
         <Row>
           <Col>
-            <Table></Table>
+            <ProfitChart />
           </Col>
         </Row>
       </div>
