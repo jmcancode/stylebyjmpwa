@@ -8,7 +8,7 @@ export default function ProfitChart() {
       {
         label: "Profit 2021",
         data: [13, 12, 11, 17, 19],
-        backgroundColor: ["#1f1f1f"],
+        backgroundColor: ["#171717"],
       },
       {
         label: "Loss 2021",

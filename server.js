@@ -3,6 +3,7 @@ const path = require("path");
 const connectDB = require("./config/db");
 const helmet = require("helmet");
 const app = express();
+const cors = require("cors")
 
 // connect mongodb
 connectDB();
@@ -11,6 +12,7 @@ connectDB();
 app.use(express.json());
 app.use("/uploads", express.static("/uploads"));
 app.use(helmet());
+app.use(cors())
 
 // define routes
 app.use("/api/users", require("./routes/api/user"));

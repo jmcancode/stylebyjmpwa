@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 // import { connect } from "react-redux";
 import { Col, Row, Card } from "react-bootstrap";
 
-const JournalDetail = ({ journal: { title, body, image, date } }) => (
+const JournalDetail = ({ journal: { _id, title, body, image, date } }) => (
   <div className="container">
     <Row>
       <Col>
-        <Card>
+        <Card key={_id}>
           <Card.Image src={image} alt="" />
           <Card.Header>
             <h2>{title}</h2>

@@ -1,11 +1,14 @@
-import React, { Fragment } from "react";
-import { Row, Col, Table } from "react-bootstrap";
+import React, { Fragment, useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import ProfitChart from "../../components/charts/profitsChart";
+import UnitsChart from "../../components/charts/unitSales";
 import AppCard from "./cards/appointmentCard";
 import JournalCard from "./cards/journalCard";
 import ProductsCard from "./cards/productsCard";
+import Calendar from "react-calendar";
 
 export default function AdminPanel() {
+  const [value, onChange] = useState(new Date());
   return (
     <Fragment>
       <div className="container">
@@ -28,13 +31,29 @@ export default function AdminPanel() {
         </Row>
         <Row>
           <Col>
-            <h4>Stats</h4>
+            <h4>Schedule</h4>
           </Col>
         </Row>
         <hr />
         <Row>
+          <Col className="p-5">
+            <Calendar onChange={onChange} value={value} />
+          </Col>
+        </Row>
+        <Row>
           <Col>
+            <h4>Statistics</h4>
+          </Col>
+        </Row>
+        <hr />
+        <Row>
+          <Col md className="mb-2">
+            <small>Profit & Loss</small>
             <ProfitChart />
+          </Col>
+          <Col md className="mb-2">
+            <small>Unit Sales</small>
+            <UnitsChart />
           </Col>
         </Row>
       </div>
