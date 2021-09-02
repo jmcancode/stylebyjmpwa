@@ -26,10 +26,11 @@ import SignUp from "../../pages/auth/register";
 import Login from "../../pages/auth/login";
 import AdminPanel from "../../pages/admin/adminPanel";
 import JournalDetail from "../../pages/journalDetail";
-
+import Alert from "../layout/Alert";
 const Routes = (props) => {
   return (
     <div>
+      <Alert />
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />

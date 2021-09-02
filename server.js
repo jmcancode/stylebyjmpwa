@@ -3,21 +3,28 @@ const path = require("path");
 const connectDB = require("./config/db");
 const helmet = require("helmet");
 const app = express();
-const cors = require("cors")
+const cors = require("cors");
+// const multer = require("multer");
+
+// app.post("/uploads", upload.single("image"), (req, res) => {
+//   console.log(req.file);
+// });
 
 // connect mongodb
 connectDB();
 
 // init middleware
 app.use(express.json());
-app.use("/uploads", express.static("/uploads"));
+app.use("/uploads", express.static("./uploads"));
 app.use(helmet());
-app.use(cors())
+app.use(cors());
 
 // define routes
 app.use("/api/users", require("./routes/api/user"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/journal", require("./routes/api/journal"));
+
+// access token expiration
 app.use(async (req, res, next) => {
   if (req.headers["x-access-token"]) {
     const accessToken = req.headers["x-access-token"];

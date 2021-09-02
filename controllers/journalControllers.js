@@ -15,7 +15,7 @@ exports.createJournals = (req, res) => {
     date: date,
   });
 
-  console.log(title, body, image, date);
+  console.log(image, title, body, date);
 
   journal.save((err, journal) => {
     if (err) {

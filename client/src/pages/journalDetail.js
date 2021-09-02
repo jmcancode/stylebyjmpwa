@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 // import { connect } from "react-redux";
 import { Col, Row, Card } from "react-bootstrap";

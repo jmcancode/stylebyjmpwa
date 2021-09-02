@@ -9,7 +9,7 @@ const JournalSchema = new mongoose.Schema(
       type: String,
     },
     image: {
-      type: Buffer,
+      type: String,
     },
     date: {
       type: Date,

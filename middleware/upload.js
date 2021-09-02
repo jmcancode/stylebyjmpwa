@@ -2,12 +2,12 @@ const multer = require("multer");
 const path = require("path");
 
 const storage = multer.diskStorage({
-  dest: function (req, file, cb) {
-    cb(null, "/uploads/");
-  },
-  filename: function (req, file, cb) {
-    console.log(file);
-    cb(null, "circulate" + "-" + Date.now() + path.extname(file.originalname));
+  destination: "uploads/",
+  filename: (req, file, cb) => {
+    return cb(
+      null,
+      `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
+    );
   },
 });
 

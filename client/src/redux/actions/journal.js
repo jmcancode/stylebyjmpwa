@@ -26,9 +26,14 @@ export const getJournals = () => async (dispatch) => {
 };
 
 // add journals
-export const addJournal = (formData) => async (dispatch) => {
+export const addJournal = (payload) => async (dispatch) => {
   try {
-    const res = await axios.post("/api/journal", formData);
+    const config = {
+      header: {
+        "Content-Type": "multipart/form-data",
+      },
+    };
+    const res = await axios.post("/api/journal", payload, config);
     dispatch({
       type: ADD_JOURNAL,
       payload: res.data,
