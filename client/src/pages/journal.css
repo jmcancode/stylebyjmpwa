@@ -1,0 +1,9 @@
+svg {
+    background-color: transparent;
+}
+
+ svg:active {
+    background-color: #ef426f;
+}
+
+

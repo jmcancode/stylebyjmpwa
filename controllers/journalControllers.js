@@ -3,7 +3,7 @@ const Journal = require("../models/Journal");
 exports.createJournals = (req, res) => {
   let title = req.body.title;
   let body = req.body.body;
-  let image = req.body.image;
+  let image = req.body.path;
   let date = req.body.date;
 
   console.log(title, body, image, date);
@@ -34,7 +34,11 @@ exports.createJournals = (req, res) => {
 
 exports.getAllJournals = async (req, res, next) => {
   try {
-    const journals = await Journal.find({}).sort({ desc: -1 }).limit(10).exec();
+    const journals = await Journal.find({})
+      .select("title body _id image")
+      .sort({ desc: -1 })
+      .limit(10)
+      .exec();
     if (!journals) {
       return res.status(400).json({ msg: "Journals not found" });
     }

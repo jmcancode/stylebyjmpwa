@@ -4,18 +4,13 @@ const connectDB = require("./config/db");
 const helmet = require("helmet");
 const app = express();
 const cors = require("cors");
-// const multer = require("multer");
-
-// app.post("/uploads", upload.single("image"), (req, res) => {
-//   console.log(req.file);
-// });
 
 // connect mongodb
 connectDB();
 
 // init middleware
 app.use(express.json());
-app.use("/uploads", express.static("./uploads"));
+app.use("/uploads", express.static("uploads"));
 app.use(helmet());
 app.use(cors());
 

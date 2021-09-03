@@ -12,17 +12,17 @@ const JournalCard = ({ addJournal }) => {
   });
 
   const [image, setImage] = useState("");
-  const [imageName, setImageName] = useState("Select your Image");
+  // const [imageName, setImageName] = useState("Select your Image");
 
   const { title, body } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onFileChange = (e) => {
-    setImage(e.target.files[0]);
-    setImageName(e.target.files[0].name);
-  };
+  // const onFileChange = (e) => {
+  //   setImage(e.target.files[0]);
+  //   setImageName(e.target.files[0].name);
+  // };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -49,9 +49,9 @@ const JournalCard = ({ addJournal }) => {
                     <Form.Control
                       type="file"
                       value={image}
-                      name={imageName}
+                      name={image}
                       accept="image/*"
-                      onChange={(e) => setImage(e.target.value)}
+                      onChange={onChange}
                     />
                   </Form.Group>
                   <Form.Group className="mb-2">

@@ -20,7 +20,7 @@ import ShopAllMen from "../../pages/shopallmen";
 import CustomMade from "../../pages/custom";
 import PolicyPage from "../../pages/policy/policy";
 import MadeInSanAntonio from "../../pages/sanAntonio";
-import JMsJournal from "../../pages/jmsjournal";
+import Journals from "../../pages/jmsjournal";
 
 import SignUp from "../../pages/auth/register";
 import Login from "../../pages/auth/login";
@@ -45,7 +45,7 @@ const Routes = (props) => {
         <Route exact path="/custom" component={CustomMade} />
         <Route exact path="/madeinspain" component={AboutUsPage} />
         <Route exact path="/designedinsa" component={MadeInSanAntonio} />
-        <Route exact path="/jmsjournal" component={JMsJournal} />
+        <Route exact path="/jmsjournal" component={Journals} />
         <Route exact path="/jmsjournal/:id" component={JournalDetail} />
         <Route exact path="/stockist" component={StockistLocation} />
         <Route exact path="/policy" component={PolicyPage} />
