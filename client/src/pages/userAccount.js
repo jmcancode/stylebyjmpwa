@@ -1,10 +1,12 @@
 import React from "react";
-import { Row, Col, Card, Nav, Tab, Button } from "react-bootstrap";
+import { Row, Col, Card, Nav, Tab, Button, Image, Form } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./pages.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-const userAccount = () => {
+const userAccount = ({ auth: { user } }) => {
   return (
     <motion.div className="container" style={{ height: "100vh" }}>
       <Row className="m-2">
@@ -55,8 +57,16 @@ const userAccount = () => {
                         <Col className="pt-3">
                           <p>Contact Information</p>
                           <hr />
-                          <p>Jon-Michael Narvaez</p>
-                          <p>jm@stylexjm.com</p>
+                          <Image
+                            thumbnail
+                            roundedCircle
+                            src={user.avatar}
+                            alt="avatar"
+                            width={80}
+                            height={80}
+                          />
+                          <p>{user.name}</p>
+                          <p>{user.email}</p>
                           <div
                             style={{
                               display: "flex",
@@ -65,7 +75,12 @@ const userAccount = () => {
                               alignItems: "center",
                             }}
                           >
-                            <button className="btn btn-danger">Edit</button>
+                            <button
+                              className="btn btn-danger"
+                              style={{ marginRight: "9px" }}
+                            >
+                              Edit
+                            </button>
                             <button className="btn btn-danger">
                               Change password
                             </button>
@@ -76,24 +91,6 @@ const userAccount = () => {
                           <hr />
                           <p>You're subscribed</p>
 
-                          <div>
-                            <button className="btn btn-danger">Edit</button>
-                          </div>
-                        </Col>
-                      </Row>
-                      <Row xs={1} md={2} lg={2} className="pt-5">
-                        <Col className="pt-3">
-                          <p>Default Billing Address</p>
-                          <hr />
-                          <p>You have not set a default billing address.</p>
-                          <div>
-                            <button className="btn btn-danger">Edit</button>
-                          </div>
-                        </Col>
-                        <Col className="pt-3">
-                          <p>Default Shipping Address</p>
-                          <hr />
-                          <p>You have not set a default shipping address.</p>
                           <div>
                             <button className="btn btn-danger">Edit</button>
                           </div>
@@ -113,28 +110,65 @@ const userAccount = () => {
                     <Tab.Pane eventKey="third">
                       <Row>
                         <Col>
-                          <p>Lorem Ipsum 2</p>
+                          <h5>You have no addresses yet</h5>
+                          <button className="btn btn-danger">
+                            Add an Address
+                          </button>
                         </Col>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="fourth">
-                      <Row>
-                        <Col>
-                          <p>Lorem Ipsum 3</p>
+                      <Row xs={1} md={2} lg={2}>
+                        <Col className="pt-3">
+                          <p>Default Billing Address</p>
+                          <hr />
+                          <p>You have not set a default billing address.</p>
+                          <div>
+                            <button className="btn btn-danger">Edit</button>
+                          </div>
+                        </Col>
+                        <Col className="pt-3">
+                          <p>Default Shipping Address</p>
+                          <hr />
+                          <p>You have not set a default shipping address.</p>
+                          <div>
+                            <button className="btn btn-danger">Edit</button>
+                          </div>
+                        </Col>
+                        <Col className="pt-3">
+                          <p>Credit Card Information</p>
+                          <hr />
+                          <p>No credit card of file.</p>
+                          <div>
+                            <button className="btn btn-danger">
+                              Add a credit card
+                            </button>
+                          </div>
                         </Col>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="fifth">
                       <Row>
                         <Col>
-                          <p>Lorem Ipsum 4</p>
+                          <Form>
+                            <Form.Check
+                              type="switch"
+                              id="switch"
+                              label="Notifications"
+                            />
+                          </Form>
                         </Col>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="sixth">
                       <Row>
                         <Col>
-                          <p>Lorem Ipsum 5</p>
+                          <p>You have no appointments set</p>
+                          <div>
+                            <button className="btn btn-danger">
+                              Schedule an appointment
+                            </button>
+                          </div>
                         </Col>
                       </Row>
                     </Tab.Pane>
@@ -156,4 +190,12 @@ const userAccount = () => {
   );
 };
 
-export default userAccount;
+userAccount.propTypes = {
+  auth: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(userAccount);
